@@ -16,6 +16,8 @@ zstyle :compinstall filename '/home/shashank/.zshrc'
 export PATH="$HOME/.cargo/env:$PATH"
 export PATH="$HOME/binaries:$PATH"
 export PATH="$HOME/.config/scripts:$PATH"
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
 
 autoload -Uz compinit
 compinit
@@ -41,3 +43,7 @@ alias gall='git add . && git commit -am "$(date)" && git push -u origin main'
 
 # opam configuration
 [[ ! -r /home/shashank/.opam/opam-init/init.zsh ]] || source /home/shashank/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+# bun completions
+[ -s "/home/shashank/.bun/_bun" ] && source "/home/shashank/.bun/_bun"
+
+export QSYS_ROOTDIR="/home/shashank/intelFPGA_lite/23.1std/quartus/sopc_builder/bin"

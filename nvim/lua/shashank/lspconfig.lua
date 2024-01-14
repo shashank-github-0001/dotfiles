@@ -13,25 +13,13 @@ lspconfig.lua_ls.setup {
 lspconfig.bashls.setup {
     capabilities = capabilities
 }
-lspconfig.pyright.setup {
-    capabilities = capabilities
-}
 lspconfig.jdtls.setup {
-    capabilities = capabilities
-}
-lspconfig.tsserver.setup {
     capabilities = capabilities
 }
 lspconfig.marksman.setup {
     capabilities = capabilities
 }
 lspconfig.ocamllsp.setup {
-    capabilities = capabilities
-}
-lspconfig.jsonls.setup {
-    capabilities = capabilities
-}
-lspconfig.emmet_language_server.setup {
     capabilities = capabilities
 }
 
