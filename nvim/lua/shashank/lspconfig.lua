@@ -22,6 +22,12 @@ lspconfig.marksman.setup {
 lspconfig.ocamllsp.setup {
     capabilities = capabilities
 }
+lspconfig.tsserver.setup {
+    capabilities = capabilities
+}
+lspconfig.pyright.setup {
+    capabilities = capabilities
+}
 
 
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
