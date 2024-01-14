@@ -28,6 +28,12 @@ lspconfig.tsserver.setup {
 lspconfig.pyright.setup {
     capabilities = capabilities
 }
+lspconfig.jsonls.setup {
+    capabilities = capabilities
+}
+lspconfig.emmet_language_server.setup {
+    capabilities = capabilities
+}
 
 
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
