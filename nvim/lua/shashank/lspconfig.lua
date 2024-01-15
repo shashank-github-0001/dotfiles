@@ -22,18 +22,6 @@ lspconfig.marksman.setup {
 lspconfig.ocamllsp.setup {
     capabilities = capabilities
 }
-lspconfig.tsserver.setup {
-    capabilities = capabilities
-}
-lspconfig.pyright.setup {
-    capabilities = capabilities
-}
-lspconfig.jsonls.setup {
-    capabilities = capabilities
-}
-lspconfig.emmet_language_server.setup {
-    capabilities = capabilities
-}
 
 
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
