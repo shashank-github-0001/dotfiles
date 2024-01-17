@@ -1,5 +1,5 @@
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-local lspconfig = require('lspconfig')
+local lspconfig = require('lspconfig')lspco
 
 lspconfig.clangd.setup {
     capabilities = capabilities
@@ -32,9 +32,6 @@ lspconfig.jsonls.setup {
     capabilities = capabilities
 }
 lspconfig.emmet_language_server.setup {
-    capabilities = capabilities
-}
-lspconfig.volar.setup {
     capabilities = capabilities
 }
 
