@@ -24,3 +24,4 @@ vim.opt.colorcolumn    = "1000"
 vim.opt.termguicolors  = true
 vim.cmd("colorscheme carbonfox")
 vim.opt.guicursor  = "a:block-blinkon0"
+vim.g.netrw_banner = 0
