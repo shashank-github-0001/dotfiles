@@ -22,4 +22,3 @@ require("nvim-tree").setup({
 })
 
 vim.keymap.set("n", "<leader>dir", ":NvimTreeToggle<CR>")
-vim.keymap.set("n", "<leader>tf", ":NvimTreeFocus<CR>")
