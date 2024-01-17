@@ -1,5 +1,5 @@
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-local lspconfig = require('lspconfig')lspco
+local lspconfig = require('lspconfig').default_capabilities(capabilities)
 
 lspconfig.clangd.setup {
     capabilities = capabilities
@@ -34,7 +34,6 @@ lspconfig.jsonls.setup {
 lspconfig.emmet_language_server.setup {
     capabilities = capabilities
 }
-
 
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
