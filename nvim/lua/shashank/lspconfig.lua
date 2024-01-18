@@ -37,12 +37,7 @@ lspconfig.emmet_language_server.setup {
 lspconfig.tailwindcss.setup {
     capabilities = capabilities
 }
-
 lspconfig.htmx.setup {
-    capabilities = capabilities
-}
-
-lspconfig.nim_langserver.setup {
     capabilities = capabilities
 }
 
