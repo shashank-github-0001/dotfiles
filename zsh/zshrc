@@ -18,13 +18,13 @@ export PATH="$HOME/binaries:$PATH"
 export PATH="$HOME/.config/scripts:$PATH"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="/home/shashank/.nimble/bin:$PATH"
 
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme
 
@@ -47,3 +47,6 @@ alias gall='git add . && git commit -am "$(date)" && git push -u origin main'
 [ -s "/home/shashank/.bun/_bun" ] && source "/home/shashank/.bun/_bun"
 
 export QSYS_ROOTDIR="/home/shashank/intelFPGA_lite/23.1std/quartus/sopc_builder/bin"
+
+# Turso
+export PATH="/home/shashank/.turso:$PATH"
