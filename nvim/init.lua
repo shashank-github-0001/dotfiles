@@ -17,10 +17,11 @@ require("lazy").setup({
     {"williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim", "neovim/nvim-lspconfig"},
     {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
     {'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-buffer', 'hrsh7th/cmp-path', 'hrsh7th/cmp-cmdline', 'hrsh7th/nvim-cmp', 'L3MON4D3/LuaSnip'},
-    {"Exafunction/codeium.nvim", dependencies = {"nvim-lua/plenary.nvim", "hrsh7th/nvim-cmp"}, config = function() require("codeium").setup({}) end },
+    {"Exafunction/codeium.nvim"},
     {'numToStr/Comment.nvim', opts = {}, lazy = false},
     {"nvim-telescope/telescope.nvim", tag = '0.1.4', dependencies = { 'nvim-lua/plenary.nvim' }},
     {"nvim-tree/nvim-tree.lua"},
+    {"Exafunction/codeium.nvim", dependencies = {"nvim-lua/plenary.nvim", "hrsh7th/nvim-cmp"}, config = function() require("codeium").setup({}) end },
 })
 
 vim.opt.compatible     = false
