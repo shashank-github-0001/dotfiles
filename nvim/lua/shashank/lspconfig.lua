@@ -1,16 +1,39 @@
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lspconfig = require('lspconfig')
 
-lspconfig.clangd.setup {}
-lspconfig.rust_analyzer.setup {}
-lspconfig.lua_ls.setup {}
-lspconfig.bashls.setup {}
-lspconfig.jdtls.setup {}
-lspconfig.marksman.setup {}
-lspconfig.ocamllsp.setup {}
-lspconfig.tsserver.setup {}
-lspconfig.pyright.setup {}
-lspconfig.jsonls.setup {}
-lspconfig.emmet_language_server.setup {}
+lspconfig.clangd.setup {
+    capabilities = capabilities
+}
+lspconfig.rust_analyzer.setup {
+    capabilities = capabilities
+}
+lspconfig.lua_ls.setup {
+    capabilities = capabilities
+}
+lspconfig.bashls.setup {
+    capabilities = capabilities
+}
+lspconfig.jdtls.setup {
+    capabilities = capabilities
+}
+lspconfig.marksman.setup {
+    capabilities = capabilities
+}
+lspconfig.ocamllsp.setup {
+    capabilities = capabilities
+}
+lspconfig.tsserver.setup {
+    capabilities = capabilities
+}
+lspconfig.pyright.setup {
+    capabilities = capabilities
+}
+lspconfig.jsonls.setup {
+    capabilities = capabilities
+}
+lspconfig.emmet_language_server.setup {
+    capabilities = capabilities
+}
 
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
