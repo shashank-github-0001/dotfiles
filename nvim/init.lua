@@ -22,6 +22,7 @@ require("lazy").setup({
     {"nvim-telescope/telescope.nvim", tag = '0.1.4', dependencies = { 'nvim-lua/plenary.nvim' }},
     {"nvim-tree/nvim-tree.lua"},
     {"Exafunction/codeium.nvim", dependencies = {"nvim-lua/plenary.nvim", "hrsh7th/nvim-cmp"}, config = function() require("codeium").setup({}) end },
+    {'windwp/nvim-autopairs', event = "InsertEnter", opts = {}},
 })
 
 vim.opt.compatible     = false
@@ -50,19 +51,6 @@ vim.opt.termguicolors  = true
 vim.opt.guicursor  = "a:block-blinkon0"
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
-
-
-
---color
-require('nightfox').setup({
-    options = {
-        styles = {
-            comments = "italic",
-            keywords = "bold",
-            types = "italic,bold",
-        }
-    }
-})
 vim.cmd("colorscheme carbonfox")
 
 
