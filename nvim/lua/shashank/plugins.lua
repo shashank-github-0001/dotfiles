@@ -1,9 +1,5 @@
 local plugins = {
     ---------------------------------------------------------------
-    { "folke/neoconf.nvim", cmd = "Neoconf" },
-    ---------------------------------------------------------------
-    "folke/neodev.nvim",
-    ---------------------------------------------------------------
     --commenting
     {
         "numToStr/Comment.nvim",
@@ -40,44 +36,11 @@ local plugins = {
         dependencies = { 'nvim-lua/plenary.nvim' },
     },
     ---------------------------------------------------------------
-    --surround
-    {
-        "kylechui/nvim-surround",
-        version = "*",
-        event = "VeryLazy",
-        config = function()
-            require("nvim-surround").setup({
-            })
-        end
-    },
-    ---------------------------------------------------------------
-    --tree
-    {
-        'nvim-tree/nvim-tree.lua',
-        dependencies = { 'nvim-tree/nvim-web-devicons',},
-    },
-    ---------------------------------------------------------------
-    --autopairs
-    {
-        'windwp/nvim-autopairs',
-        event = "InsertEnter",
-        opts = {}
-    },
-    ---------------------------------------------------------------
     --colorscheme
     {"EdenEast/nightfox.nvim"},
     ---------------------------------------------------------------
     --codeium
     "Exafunction/codeium.vim",
-    ---------------------------------------------------------------
-    --nvim-treesitter-playground
-    "nvim-treesitter/playground",
-    ---------------------------------------------------------------
-    --undo tree
-    "mbbill/undotree",
-    ---------------------------------------------------------------
-    --for git
-    "tpope/vim-fugitive",
     ---------------------------------------------------------------
     --for i dont know why
     "nvim-tree/nvim-web-devicons",
@@ -90,29 +53,6 @@ local plugins = {
     ---------------------------------------------------------------
     --for mason-lspconfig i dont know why
     "williamboman/mason-lspconfig.nvim",
-    ---------------------------------------------------------------
-    --snippet manager
-    {
-        "L3MON4D3/LuaSnip",
-        version = "v2.*",
-        build = "make install_jsregexp"
-    },
-    ---------------------------------------------------------------
-    --completions
-    {
-        'hrsh7th/nvim-cmp',
-        dependencies = {
-            'hrsh7th/cmp-nvim-lsp',
-            'hrsh7th/cmp-buffer',
-            'hrsh7th/cmp-path',
-            'hrsh7th/cmp-cmdline',
-            'hrsh7th/nvim-cmp',
-            'L3MON4D3/LuaSnip',
-            'saadparwaiz1/cmp_luasnip',
-            'rafamadriz/friendly-snippets',
-            'hrsh7th/cmp-nvim-lsp'
-        }
-    },
     ---------------------------------------------------------------
 }
 
