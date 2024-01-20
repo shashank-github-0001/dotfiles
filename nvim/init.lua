@@ -17,7 +17,6 @@ require("lazy").setup({
     {"williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim", "neovim/nvim-lspconfig"},
     {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
     {'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-buffer', 'hrsh7th/cmp-path', 'hrsh7th/cmp-cmdline', 'hrsh7th/nvim-cmp', 'L3MON4D3/LuaSnip'},
-    {"Exafunction/codeium.nvim"},
     {'numToStr/Comment.nvim', opts = {}, lazy = false},
     {"nvim-telescope/telescope.nvim", tag = '0.1.4', dependencies = { 'nvim-lua/plenary.nvim' }},
     {"nvim-tree/nvim-tree.lua"},
@@ -169,6 +168,7 @@ cmp.setup({
     vim.keymap.set('n', '<C-b>', '<C-b>zz<CR>');
     vim.keymap.set('n', '<C-f>', '<C-f>zz<CR>');
     vim.keymap.set('n', '<leader>ch', ':CheckHealth<CR>');
+    vim.keymap.set('n', '<leader>al', 'GVgg=G');
 
     --telescope 
     local builtin = require('telescope.builtin')
