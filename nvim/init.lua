@@ -14,7 +14,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     {"EdenEast/nightfox.nvim"},
     {'nvim-lualine/lualine.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' }},
-    { 'nvim-tree/nvim-web-devicons' },
     {"williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim", "neovim/nvim-lspconfig"},
     {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
     {'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-buffer', 'hrsh7th/cmp-path', 'hrsh7th/cmp-cmdline', 'hrsh7th/nvim-cmp', 'L3MON4D3/LuaSnip'},
@@ -76,7 +75,7 @@ require('lualine').setup({
 --treesitter
 require'nvim-treesitter.configs'.setup {
     -- A list of parser names, or "all" (the five listed parsers should always be installed)
-    ensure_installed = { "c", "lua", "cpp", "rust", "typescript", "bash", "java", "json", "markdown", "ocaml" ,"python"},
+    ensure_installed = { "c", "lua", "cpp", "rust", "typescript", "bash", "java", "json", "markdown", "ocaml" ,"python", "dart"},
     sync_install = true,
     auto_install = true,
     highlight = {
