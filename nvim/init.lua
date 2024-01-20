@@ -23,6 +23,7 @@ require("lazy").setup({
     {"nvim-tree/nvim-tree.lua"},
     {"Exafunction/codeium.nvim", dependencies = {"nvim-lua/plenary.nvim", "hrsh7th/nvim-cmp"}, config = function() require("codeium").setup({}) end },
     {'windwp/nvim-autopairs', event = "InsertEnter", opts = {}},
+    {"kylechui/nvim-surround", version = "*", event = "VeryLazy", config = function() require("nvim-surround").setup({}) end},
 })
 
 vim.opt.compatible     = false
