@@ -41,7 +41,6 @@ alias rate='sudo rate-mirrors --allow-root --protocol https arch | tee /etc/pacm
 alias backupmirrors='sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak'
 alias z='zellij'
 alias gall='git add . && git commit -am "$(date)" && git push -u origin main'
-alias hx='flatpak run com.helix_editor.Helix'
 
 # opam configuration
 [[ ! -r /home/shashank/.opam/opam-init/init.zsh ]] || source /home/shashank/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null

@@ -1,34 +1,6 @@
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-
-if not vim.loop.fs_stat(lazypath) then
-    vim.fn.system({
-        "git",
-        "clone",
-        "--filter=blob:none",
-        "https://github.com/folke/lazy.nvim.git",
-        "--branch=stable",
-        lazypath,
-    })
-end
-vim.opt.rtp:prepend(lazypath)
-require("lazy").setup({
-    {"EdenEast/nightfox.nvim"},
-    {'nvim-lualine/lualine.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' }},
-    {"williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim", "neovim/nvim-lspconfig"},
-    {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
-    {'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-buffer', 'hrsh7th/cmp-path', 'hrsh7th/cmp-cmdline', 'hrsh7th/nvim-cmp', 'L3MON4D3/LuaSnip'},
-    {'numToStr/Comment.nvim', opts = {}, lazy = false},
-    {"nvim-telescope/telescope.nvim", tag = '0.1.4', dependencies = { 'nvim-lua/plenary.nvim' }},
-    {"nvim-tree/nvim-tree.lua"},
-    {'windwp/nvim-autopairs', event = "InsertEnter", opts = {}},
-    {"kylechui/nvim-surround", version = "*", event = "VeryLazy", config = function() require("nvim-surround").setup({}) end},
-})
-
-vim.opt.compatible     = false
 vim.opt.number         = true
 vim.opt.relativenumber = true
 vim.opt.tabstop        = 4
-vim.opt.termguicolors  = true
 vim.opt.shiftwidth     = 4
 vim.opt.softtabstop    = 4
 vim.opt.expandtab      = true
@@ -50,56 +22,144 @@ vim.opt.termguicolors  = true
 vim.opt.guicursor  = "a:block-blinkon0"
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable",
+        lazypath,
+    })
+end
+vim.opt.rtp:prepend(lazypath)
+
+local plugins = {
+    ---------------------------------------------------------------------
+    {
+        "Exafunction/codeium.vim",
+        event = "BufEnter"
+    },
+    ---------------------------------------------------------------------
+    {
+        "nvim-treesitter/nvim-treesitter",
+        build = ":TSUpdate",
+    },
+    ---------------------------------------------------------------------
+    {
+        "nvim-telescope/telescope.nvim", tag = '0.1.5',
+        dependencies = { 'nvim-lua/plenary.nvim' }
+    },
+    ---------------------------------------------------------------------
+    {
+        'numToStr/Comment.nvim',
+        opts = {},
+        lazy = false,
+    },
+    ---------------------------------------------------------------------
+    {
+        'windwp/nvim-autopairs',
+        event = "InsertEnter",
+        opts = {}
+    },
+    ---------------------------------------------------------------------
+    {
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
+        "neovim/nvim-lspconfig",
+    },
+    ---------------------------------------------------------------------
+    {
+        'hrsh7th/cmp-nvim-lsp',
+        'hrsh7th/cmp-buffer',
+        'hrsh7th/cmp-path',
+        'hrsh7th/cmp-cmdline',
+        'hrsh7th/nvim-cmp',
+        'L3MON4D3/LuaSnip',
+    },
+    ---------------------------------------------------------------------
+    { "EdenEast/nightfox.nvim" },
+    ---------------------------------------------------------------------
+    {
+        "nvim-tree/nvim-tree.lua",
+        dependencies = {"nvim-tree/nvim-web-devicons"}
+    },
+    ---------------------------------------------------------------------
+    {
+        'nvim-lualine/lualine.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' }
+    }
+    ---------------------------------------------------------------------
+    ---------------------------------------------------------------------
+    ---------------------------------------------------------------------
+    ---------------------------------------------------------------------
+    ---------------------------------------------------------------------
+    ---------------------------------------------------------------------
+    ---------------------------------------------------------------------
+    ---------------------------------------------------------------------
+    ---------------------------------------------------------------------
+    ---------------------------------------------------------------------
+}
+require("lazy").setup(plugins, opts)
+
+
+
+--configure all the plugins
+--colorscheme
 vim.cmd("colorscheme carbonfox")
 
 
---lualine
-require('lualine').setup({
-    icone_enabled  = true,
-})
-
-
 --treesitter
-require'nvim-treesitter.configs'.setup {
-    -- A list of parser names, or "all" (the five listed parsers should always be installed)
-    ensure_installed = { "c", "lua", "cpp", "rust", "typescript", "bash", "java", "json", "markdown", "ocaml" ,"python", "dart"},
-    sync_install = true,
+require("nvim-treesitter.configs").setup({
+    ensure_installed = { "c", "lua", "rust", "cpp", "rust" },
+    sync_install = false,
     auto_install = true,
     highlight = {
         enable = true,
-        disable = function(_, buf)
-            local max_filesize = 100 * 1024 -- 100 KB
+        disable = function(lang, buf)
+            local max_filesize = 100 * 1024
             local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
             if ok and stats and stats.size > max_filesize then
                 return true
             end
         end,
+        additional_vim_regex_highlighting = true,
     },
-}
+})
 
---mason
+
+--telescope
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<leader>fg', builtin.git_files, {})
+vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+
+--lsp
 require("mason").setup({
     ui = {
         icons = {
             package_installed = "✓",
             package_pending = "➜",
-            package_uninstalled = "✗"
+            package_uninstalled = "✗",
         }
     }
 })
-
---mason-lspconfig
 require("mason-lspconfig").setup({
-    ensure_installed = {"lua_ls", "rust_analyzer", "bashls", "clangd", "emmet_language_server", "jdtls", "jsonls", "marksman", "ocamllsp", "pyright", "tsserver"}
+    ensure_installed = { "rust_analyzer","clangd" ,"pyright" ,"tsserver" ,"lua_ls", "jdtls", "jsonls", "ocamllsp"},
 })
+local lspconfig = require("lspconfig")
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
+local cmp = require('cmp')
 
---cmp
-local cmp = require("cmp");
 cmp.setup({
     snippet = {
         expand = function(args)
-            require('luasnip').lsp_expand(args.body)
+            require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
         end,
     },
     window = {
@@ -113,92 +173,72 @@ cmp.setup({
         ['<C-e>'] = cmp.mapping.abort(),
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
     }),
-    sources = cmp.config.sources({{ name = 'nvim_lsp' }, { name = 'luasnip' }},  {{ name = 'buffer' }})})
-    cmp.setup.filetype('gitcommit', {sources = cmp.config.sources({{ name = 'git' }}, {{ name = 'buffer' }})})
-    cmp.setup.cmdline({ '/', '?' }, {mapping = cmp.mapping.preset.cmdline(), sources = {{ name = 'buffer' }}})
-    cmp.setup.cmdline(':', {mapping = cmp.mapping.preset.cmdline(), sources = cmp.config.sources({{ name = 'path' }}, {{ name = 'cmdline' }})})
-
-
-    --lsp servers
-    local capabilities = require('cmp_nvim_lsp').default_capabilities()
-    local lspconfig = require('lspconfig')
-
-    lspconfig.rust_analyzer.setup {
-        capabilities = capabilities
-    }
-    lspconfig.bashls.setup {
-        capabilities = capabilities
-    }
-    lspconfig.clangd.setup {
-        capabilities = capabilities
-    }
-    lspconfig.emmet_language_server.setup {
-        capabilities = capabilities
-    }
-    lspconfig.jdtls.setup {
-        capabilities = capabilities
-    }
-    lspconfig.jsonls.setup {
-        capabilities = capabilities
-    }
-    lspconfig.lua_ls.setup {
-        capabilities = capabilities
-    }
-    lspconfig.marksman.setup {
-        capabilities = capabilities
-    }
-    lspconfig.ocamllsp.setup {
-        capabilities = capabilities
-    }
-    lspconfig.pyright.setup {
-        capabilities = capabilities
-    }
-    lspconfig.tsserver.setup {
-        capabilities = capabilities
-    }
-    lspconfig.dartls.setup {
-        capabilities = capabilities
-    }
-
-    --remaps
-    vim.keymap.set('n', '<leader>dir', ':Ex<CR>');
-    vim.keymap.set('n', '<leader>la', ':Lazy<CR>');
-    vim.keymap.set('n', '<leader>m', ':Mason<CR>');
-    vim.keymap.set('n', '<C-b>', '<C-b>zz<CR>');
-    vim.keymap.set('n', '<C-f>', '<C-f>zz<CR>');
-    vim.keymap.set('n', '<leader>ch', ':CheckHealth<CR>');
-    vim.keymap.set('n', '<leader>al', 'GVgg=G');
-
-    --telescope 
-    local builtin = require('telescope.builtin')
-    vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-    vim.keymap.set('n', '<leader>lg', builtin.live_grep, {})
-    vim.keymap.set('n', '<leader>b', builtin.buffers, {})
-    vim.keymap.set('n', '<leader>ht', builtin.help_tags, {})
-    vim.keymap.set('n', '<leader>gr', builtin.lsp_references, {})
-    vim.keymap.set('n', '<leader>ds', builtin.lsp_document_symbols, {})
-    vim.keymap.set('n', '<leader>ws', builtin.lsp_dynamic_workspace_symbols, {})
-
-
-    --tree
-    require("nvim-tree").setup({
-        sort = {
-            sorter = "case_sensitive",
-        },
-        view = {
-            width = 30,
-        },
-        renderer = {
-            group_empty = true,
-        },
-        filters = {
-            dotfiles = false,
-        },
-        actions = {
-            open_file = {
-                quit_on_open = true,
-                resize_window = true,
-            }
-        }
+    sources = cmp.config.sources({
+        { name = 'nvim_lsp' },
+        { name = 'luasnip' },
+    }, {
+        { name = 'buffer' },
     })
-    vim.keymap.set('n', '<leader>dir', ':NvimTreeToggle<CR>', {})
+})
+
+cmp.setup.filetype('gitcommit', {
+    sources = cmp.config.sources({
+        { name = 'git' },
+    }, {
+        { name = 'buffer' },
+    })
+})
+
+cmp.setup.cmdline({ '/', '?' }, {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {
+        { name = 'buffer' }
+    }
+})
+
+cmp.setup.cmdline(':', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = cmp.config.sources({
+        { name = 'path' }
+    }, {
+        { name = 'cmdline' }
+    })
+})
+
+lspconfig.pyright.setup({ capabilities = capabilities })
+lspconfig.rust_analyzer.setup({ capabilities = capabilities })
+lspconfig.clangd.setup({ capabilities = capabilities })
+lspconfig.tsserver.setup({ capabilities = capabilities })
+lspconfig.lua_ls.setup({ capabilities = capabilities })
+lspconfig.jdtls.setup({ capabilities = capabilities })
+lspconfig.ocamllsp.setup({ capabilities = capabilities })
+lspconfig.jsonls.setup({ capabilities = capabilities })
+
+
+--the tree shit
+require("nvim-tree").setup({
+  sort = {
+    sorter = "case_sensitive",
+  },
+  view = {
+    width = 30,
+  },
+  renderer = {
+    group_empty = true,
+  },
+  filters = {
+    dotfiles = true,
+  },
+  actions = {
+    open_file = {
+      quit_on_open = true,
+      resize_window = true,
+    }
+  }
+})
+
+vim.keymap.set("n", "<leader>dir", ":NvimTreeToggle<CR>")
+
+
+--lualine
+require('lualine').setup()
