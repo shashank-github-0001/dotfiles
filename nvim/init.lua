@@ -205,6 +205,7 @@ lspconfig.lua_ls.setup({ capabilities = capabilities })
 lspconfig.jdtls.setup({ capabilities = capabilities })
 lspconfig.ocamllsp.setup({ capabilities = capabilities })
 lspconfig.jsonls.setup({ capabilities = capabilities })
+lspconfig.dartls.setup({ capabilities = capabilities })
 
 
 --the tree shit
