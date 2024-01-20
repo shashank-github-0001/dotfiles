@@ -20,7 +20,6 @@ require("lazy").setup({
     {'numToStr/Comment.nvim', opts = {}, lazy = false},
     {"nvim-telescope/telescope.nvim", tag = '0.1.4', dependencies = { 'nvim-lua/plenary.nvim' }},
     {"nvim-tree/nvim-tree.lua"},
-    {"Exafunction/codeium.nvim", dependencies = {"nvim-lua/plenary.nvim", "hrsh7th/nvim-cmp"}, config = function() require("codeium").setup({}) end },
     {'windwp/nvim-autopairs', event = "InsertEnter", opts = {}},
     {"kylechui/nvim-surround", version = "*", event = "VeryLazy", config = function() require("nvim-surround").setup({}) end},
 })
