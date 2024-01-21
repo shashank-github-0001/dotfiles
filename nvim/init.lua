@@ -110,7 +110,7 @@ vim.cmd("colorscheme carbonfox")
 
 --treesitter
 require("nvim-treesitter.configs").setup({
-    ensure_installed = { "c", "lua", "cpp", "rust" , "python"},
+    ensure_installed = { "c", "lua", "cpp", "rust" , "python", "java"},
     sync_install = false,
     auto_install = true,
     highlight = {
