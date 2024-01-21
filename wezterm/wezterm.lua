@@ -7,7 +7,7 @@ end
 
 
 config.color_scheme = 'carbonfox'
-config.font = wezterm.font ('JetBrainsMono Nerd Font')
+config.font = wezterm.font ('FiraCode Nerd Font')
 config.font_size = 16
 config.window_padding = {
     left = 10,
