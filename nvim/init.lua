@@ -21,6 +21,11 @@ vim.opt.colorcolumn    = "1000"
 vim.opt.termguicolors  = true
 vim.opt.guicursor      = "a:block-blinkon0"
 vim.o.scrolloff        = 10
+vim.g.vimwiki_list = {{
+    path = "~/vimwiki/",
+    syntax = "markdown",
+    ext = ".md"
+  }}
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -106,8 +111,11 @@ local plugins = {
             { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
             { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
         },
-    }
+    },
     ---------------------------------------------------------------------
+    {
+        "vimwiki/vimwiki",
+    },
     ---------------------------------------------------------------------
     ---------------------------------------------------------------------
     ---------------------------------------------------------------------
@@ -121,6 +129,9 @@ require("lazy").setup(plugins, opts)
 
 
 --configure all the plugins
+
+
+
 --colorscheme
 vim.cmd("colorscheme carbonfox")
 
@@ -175,6 +186,19 @@ cmp.setup({
     mapping = cmp.mapping.preset.insert({
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
+        ["<Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.select_next_item()
+                -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable() 
+                -- that way you will only jump inside the snippet region
+            elseif luasnip.expand_or_jumpable() then
+                luasnip.expand_or_jump()
+            elseif has_words_before() then
+                cmp.complete()
+            else
+                fallback()
+            end
+        end, { "i", "s" }),
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.abort(),
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
@@ -267,3 +291,5 @@ vim.keymap.set('n', '<C-f>', '<C-f>zz');
 vim.keymap.set('n', '<C-b>', '<C-b>zz');
 vim.keymap.set('n', '<leader>m', ':Mason<CR>');
 vim.keymap.set('n', '<leader>la', ':Lazy<CR>');
+
+

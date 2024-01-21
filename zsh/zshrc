@@ -52,3 +52,4 @@ export QSYS_ROOTDIR="/home/shashank/intelFPGA_lite/23.1std/quartus/sopc_builder/
 
 # Turso
 export PATH="/home/shashank/.turso:$PATH"
+export EDITOR=vim
