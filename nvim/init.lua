@@ -38,11 +38,6 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
     ---------------------------------------------------------------------
     {
-        "Exafunction/codeium.vim",
-        event = "BufEnter"
-    },
-    ---------------------------------------------------------------------
-    {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
     },
