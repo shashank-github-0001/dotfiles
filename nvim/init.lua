@@ -20,8 +20,7 @@ vim.opt.updatetime     = 50
 vim.opt.colorcolumn    = "1000"
 vim.opt.termguicolors  = true
 vim.opt.guicursor  = "a:block-blinkon0"
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+vim.o.scrolloff = 10
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -210,8 +209,8 @@ lspconfig.dartls.setup({ capabilities = capabilities })
 
 --global remaps
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+vim.keymap.set('n', '[g', vim.diagnostic.goto_prev)
+vim.keymap.set('n', ']g', vim.diagnostic.goto_next)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
 
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -242,38 +241,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 
 
---the tree shit
-require("nvim-tree").setup({
-    sort = {
-        sorter = "case_sensitive",
-    },
-    view = {
-        width = 30,
-    },
-    renderer = {
-        group_empty = true,
-        icons = {
-            show = {
-                file = false,
-                folder = false,
-                git = false,
-                folder_arrow = false,
-            }
-        },
-    },
-    filters = {
-        dotfiles = true,
-    },
-    actions = {
-        open_file = {
-            quit_on_open = true,
-            resize_window = true,
-        }
-    }
-})
-
-vim.keymap.set("n", "<leader>dir", ":NvimTreeToggle<CR>")
-
-
 --lualine
 require('lualine').setup()
+
+
+
+--personal remaps 
+vim.keymap.set('n', '<leader>dir', ':Ex<CR>');
+vim.keymap.set('n', '<C-f>', '<C-f>zz');
+vim.keymap.set('n', '<C-b>', '<C-b>zz');
