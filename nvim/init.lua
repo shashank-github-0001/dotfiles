@@ -22,7 +22,6 @@ vim.opt.termguicolors  = true
 vim.opt.guicursor      = "a:block-blinkon0"
 vim.o.scrolloff        = 10
 vim.g.vimwiki_list = {{
-    path = "~/vimwiki/",
     syntax = "markdown",
     ext = ".md"
   }}
