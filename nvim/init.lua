@@ -19,8 +19,8 @@ vim.g.maplocalleader   = " "
 vim.opt.updatetime     = 50
 vim.opt.colorcolumn    = "1000"
 vim.opt.termguicolors  = true
-vim.opt.guicursor  = "a:block-blinkon0"
-vim.o.scrolloff = 10
+vim.opt.guicursor      = "a:block-blinkon0"
+vim.o.scrolloff        = 10
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -250,3 +250,5 @@ require('lualine').setup()
 vim.keymap.set('n', '<leader>dir', ':Ex<CR>');
 vim.keymap.set('n', '<C-f>', '<C-f>zz');
 vim.keymap.set('n', '<C-b>', '<C-b>zz');
+vim.keymap.set('n', '<leader>m', ':Mason<CR>');
+vim.keymap.set('n', '<leader>la', ':Lazy<CR>');
