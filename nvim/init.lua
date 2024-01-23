@@ -21,12 +21,12 @@ vim.opt.colorcolumn    = "1000"
 vim.opt.termguicolors  = true
 vim.opt.guicursor      = "a:block-blinkon0"
 vim.o.scrolloff        = 10
-vim.g.vimwiki_list = {{
+vim.g.vimwiki_list     = { {
     syntax = "markdown",
     ext = ".md"
-}}
+} }
 
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local lazypath         = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
         "git",
@@ -47,7 +47,8 @@ local plugins = {
     },
     ---------------------------------------------------------------------
     {
-        "nvim-telescope/telescope.nvim", tag = '0.1.5',
+        "nvim-telescope/telescope.nvim",
+        tag = '0.1.5',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
     ---------------------------------------------------------------------
@@ -82,7 +83,7 @@ local plugins = {
     ---------------------------------------------------------------------
     {
         "nvim-tree/nvim-tree.lua",
-        dependencies = {"nvim-tree/nvim-web-devicons"}
+        dependencies = { "nvim-tree/nvim-web-devicons" }
     },
     ---------------------------------------------------------------------
     {
@@ -104,10 +105,10 @@ local plugins = {
             "TmuxNavigatePrevious",
         },
         keys = {
-            { "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
-            { "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
-            { "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
-            { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
+            { "<c-h>",  "<cmd><C-U>TmuxNavigateLeft<cr>" },
+            { "<c-j>",  "<cmd><C-U>TmuxNavigateDown<cr>" },
+            { "<c-k>",  "<cmd><C-U>TmuxNavigateUp<cr>" },
+            { "<c-l>",  "<cmd><C-U>TmuxNavigateRight<cr>" },
             { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
         },
     },
@@ -147,7 +148,7 @@ vim.cmd("colorscheme carbonfox")
 
 --treesitter
 require("nvim-treesitter.configs").setup({
-    ensure_installed = { "c", "lua", "cpp", "rust" , "python", "java"},
+    ensure_installed = { "c", "lua", "cpp", "rust", "python", "java" },
     sync_install = false,
     auto_install = true,
     highlight = {
@@ -174,7 +175,7 @@ require("mason").setup({
     }
 })
 require("mason-lspconfig").setup({
-    ensure_installed = { "rust_analyzer","clangd" ,"pyright" ,"tsserver" ,"lua_ls", "jdtls", "jsonls", "ocamllsp"},
+    ensure_installed = { "rust_analyzer", "clangd", "pyright", "tsserver", "lua_ls", "jdtls", "jsonls", "ocamllsp" },
 })
 local lspconfig = require("lspconfig")
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -198,7 +199,7 @@ cmp.setup({
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
-                -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable() 
+                -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
                 -- that way you will only jump inside the snippet region
             elseif luasnip.expand_or_jumpable() then
                 luasnip.expand_or_jump()
@@ -294,12 +295,10 @@ require('lualine').setup()
 
 
 
---personal remaps 
+--personal remaps
 vim.keymap.set('n', '<leader>dir', ':Ex<CR>');
 vim.keymap.set('n', '<C-f>', '<C-f>zz');
 vim.keymap.set('n', '<C-b>', '<C-b>zz');
 vim.keymap.set('n', '<leader>m', ':Mason<CR>');
 vim.keymap.set('n', '<leader>la', ':Lazy<CR>');
 vim.keymap.set('n', '<leader>al', 'GVgg=G');
-
-
