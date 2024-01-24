@@ -13,43 +13,9 @@ bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/shashank/.zshrc'
-export PATH="$HOME/.cargo/env:$PATH"
-export PATH="$HOME/binaries:$PATH"
-export PATH="$HOME/.config/scripts:$PATH"
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-export PATH="/home/shashank/.nimble/bin:$PATH"
-export PATH="$HOME/flutter/bin:$PATH"
+
 
 autoload -Uz compinit
 compinit
-# End of lines added by compinstall
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-
-
-alias l='exa -al'
-alias ls='exa'
-alias f='cd $(fd -t d -H | fzf)'
-alias rate='sudo rate-mirrors --allow-root --protocol https arch | tee /etc/pacman.d/mirrorlist'
-alias backupmirrors='sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak'
-alias z='zellij'
-alias gall='git add . && git commit -am "$(date)" && git push -u origin main'
-alias t='a=$(fd -t d -H | fzf) && tmux new-session -c "$a" -s "$(basename "$a")"'
 
 # opam configuration
-[[ ! -r /home/shashank/.opam/opam-init/init.zsh ]] || source /home/shashank/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
-# bun completions
-[ -s "/home/shashank/.bun/_bun" ] && source "/home/shashank/.bun/_bun"
-
-export QSYS_ROOTDIR="/home/shashank/intelFPGA_lite/23.1std/quartus/sopc_builder/bin"
-
-# Turso
-export PATH="/home/shashank/.turso:$PATH"
-export EDITOR=vim
