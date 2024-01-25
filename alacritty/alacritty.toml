@@ -1,5 +1,5 @@
-# [colors]
-# draw_bold_text_with_bright_colors = true
+[colors]
+draw_bold_text_with_bright_colors = true
 
 [env]
 TERM = "xterm-256color"
@@ -38,10 +38,6 @@ y = 15
 [cursor]
 style = "block"
 
-
-# Nightfox Alacritty Colors
-## name: carbonfox
-## upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/carbonfox/alacritty.toml
 
 [colors.primary]
 background = "#161616"
