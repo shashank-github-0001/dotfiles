@@ -9,6 +9,7 @@ set -x PATH "$HOME/.config/scripts" $PATH
 set -x BUN_INSTALL "$HOME/.bun"
 set -x PATH "$BUN_INSTALL/bin" $PATH
 set -x PATH "/home/shashank/.nimble/bin" $PATH
+set -gx EDITOR nvim
 set -x PATH "$HOME/flutter/bin" $PATH
 
 
