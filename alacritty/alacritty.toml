@@ -8,19 +8,19 @@ TERM = "xterm-256color"
 size = 18
 
 [font.bold]
-family = "MartianMono Nerd Font"
+family = "JetBrainsMono Nerd Font"
 style = "Bold"
 
 [font.bold_italic]
-family = "MartianMono Nerd Font"
+family = "JetBrainsMono Nerd Font"
 style = "Bold Italic"
 
 [font.italic]
-family = "MartianMono Nerd Font"
+family = "JetBrainsMono Nerd Font"
 style = "Italic"
 
 [font.normal]
-family = "MartianMono Nerd Font"
+family = "JetBrainsMono Nerd Font"
 style = "Regular"
 
 [window]
