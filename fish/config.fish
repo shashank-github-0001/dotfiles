@@ -3,14 +3,17 @@ if status is-interactive
 end
 
 
-set -x PATH "$HOME/.cargo/env" $PATH
-set -x PATH "$HOME/binaries" $PATH
-set -x PATH "$HOME/.config/scripts" $PATH
-set -x BUN_INSTALL "$HOME/.bun"
-set -x PATH "$BUN_INSTALL/bin" $PATH
-set -x PATH "/home/shashank/.nimble/bin" $PATH
+set -x fish_user_paths ~/.cargo/bin $fish_user_paths
+set -x fish_user_paths ~/.cargo/env $fish_user_paths
+set -x fish_user_paths ~/binaries $fish_user_paths
+set -x fish_user_paths ~/.config/scripts $fish_user_paths
+set -x BUN_INSTALL ~/.bun
+set -x fish_user_paths $BUN_INSTALL/bin $fish_user_paths
+set -x fish_user_paths /home/shashank/.nimble/bin $fish_user_paths
+set -x fish_user_paths ~/flutter/bin $fish_user_paths
+set -U fish_user_default_shell alacritty
 set -gx EDITOR nvim
-set -x PATH "$HOME/flutter/bin" $PATH
+set fish_greeting
 
 
 alias l 'exa -al'
