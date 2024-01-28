@@ -11,7 +11,6 @@ set -x BUN_INSTALL ~/.bun
 set -x fish_user_paths $BUN_INSTALL/bin $fish_user_paths
 set -x fish_user_paths /home/shashank/.nimble/bin $fish_user_paths
 set -x fish_user_paths ~/flutter/bin $fish_user_paths
-set -U fish_user_default_shell alacritty
 set -gx EDITOR nvim
 set fish_greeting
 
