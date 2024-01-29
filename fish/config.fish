@@ -11,7 +11,9 @@ set -x BUN_INSTALL ~/.bun
 set -x fish_user_paths $BUN_INSTALL/bin $fish_user_paths
 set -x fish_user_paths /home/shashank/.nimble/bin $fish_user_paths
 set -x fish_user_paths ~/flutter/bin $fish_user_paths
+set -x fish_user_paths /opt/intelFPGA/20.1/modelsim_ase/bin $fish_user_paths
 set -gx EDITOR nvim
+set -g STARSHIP_CONFIG ~/example/non/default/path/starship.toml
 set fish_greeting
 
 
