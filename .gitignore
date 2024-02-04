@@ -1,4 +1,5 @@
 .git
+.gitignore
 .gsd-keyboard.settings-ported
 autostart
 BraveSoftware
