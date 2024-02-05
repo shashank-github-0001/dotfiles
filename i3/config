@@ -1,6 +1,4 @@
 exec --no-startup-id xrandr --output eDP-1 --scale 0.5x0.5
-exec --no-startup-id wal -R
-exec --no-startup-id ~/.config/polybar/launch.sh
 set $mod Mod4
 set $alt Mod1
 font pango:Fira Code Nerd Font 16
@@ -17,15 +15,15 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 default_floating_border none
-default_border pixel 2
+default_border pixel 0
 hide_edge_borders smart
 smart_borders no_gaps
-gaps inner 2
-gaps outer 5
+gaps inner 1
+gaps outer 1
 
 for_window [class="^.*"] no_title border pixel 1
 
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty 
 bindsym $mod+q kill
 bindsym $mod+d exec --no-startup-id rofi -show drun
 
@@ -112,20 +110,3 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-
-set_from_resource $1 i3wm.color1
-set_from_resource $2 i3wm.color2 
-set_from_resource $3 i3wm.color3 
-set_from_resource $4 i3wm.color4 
-set_from_resource $5 i3wm.color5 
-set_from_resource $6 i3wm.color6 
-set_from_resource $7 i3wm.color7 
-
-# class                 border  backgr text indicator child_border
-client.focused          $1     $2    $3  	$4       $5
-client.focused_inactive $1     $2    $3  	$4       $5
-client.unfocused        $1     $2    $3  	$4       $5
-client.urgent           $1     $2    $3  	$4       $5
-client.placeholder      $1     $2    $3  	$5       $5
-
-client.background       $6

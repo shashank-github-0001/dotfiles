@@ -28,3 +28,6 @@ alias t 'set -x a $(fd -t d -H | fzf) && tmux new-session -c "$a" -s "$(basename
 
 
 eval (starship init fish | source)
+
+# opam configuration
+source /home/shashank/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
