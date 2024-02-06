@@ -25,6 +25,7 @@ alias backupmirrors 'sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.b
 alias z 'zellij'
 alias gall 'git add . && git commit -am "$(date)" && git push -u origin main'
 alias t 'set -x a $(fd -t d -H | fzf) && tmux new-session -c "$a" -s "$(basename "$a")"'
+alias ff 'fastfetch'
 
 
 eval (starship init fish | source)
