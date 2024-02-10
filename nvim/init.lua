@@ -174,7 +174,7 @@ require("mason").setup({
     }
 })
 require("mason-lspconfig").setup({
-    ensure_installed = { "rust_analyzer", "clangd", "pyright", "tsserver", "lua_ls", "jdtls", "jsonls", "ocamllsp" },
+    ensure_installed = { "rust_analyzer", "clangd", "pyright", "tsserver", "lua_ls", "jdtls", "jsonls",},
 })
 local lspconfig = require("lspconfig")
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -238,7 +238,6 @@ lspconfig.clangd.setup({ capabilities = capabilities })
 lspconfig.tsserver.setup({ capabilities = capabilities })
 lspconfig.lua_ls.setup({ capabilities = capabilities })
 lspconfig.jdtls.setup({ capabilities = capabilities })
-lspconfig.ocamllsp.setup({ capabilities = capabilities })
 lspconfig.jsonls.setup({ capabilities = capabilities })
 lspconfig.htmx.setup({ capabilities = capabilities })
 lspconfig.emmet_language_server.setup({ capabilities = capabilities })
