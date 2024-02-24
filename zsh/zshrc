@@ -9,13 +9,59 @@ fi
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-bindkey -e
+setopt autocd beep extendedglob nomatch notify
+bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/shashank/.zshrc'
 
-
 autoload -Uz compinit
 compinit
+# End of lines added by compinstall
+ 
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source ~/.zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+# source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
-# opam configuration
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Path additions (using PATH instead of fish_user_paths)
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.cargo/env:$PATH"
+export PATH="$HOME/binaries:$PATH"
+export PATH="$HOME/.config/scripts:$PATH"
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="/home/shashank/.nimble/bin:$PATH"
+export PATH="$HOME/flutter/bin:$PATH"
+export PATH="$HOME/.local/share/:$PATH"
+export PATH="$PATH:/home/shashank/.local/bin"
+
+# Environment variables
+export EDITOR="nvim"
+export STARSHIP_CONFIG="$HOME/example/non/default/path/starship.toml"
+
+# Aliases (using the same syntax)
+alias l='exa -al'
+alias ls='exa'
+alias f='cd $(fd -t d -H | fzf)'
+alias rate='sudo rate-mirrors --allow-root --protocol https arch | tee /etc/pacman.d/mirrorlist'
+alias backupmirrors='sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak'
+alias gall='git add . && git commit -am "$(date)" && git push -u origin main'
+alias t='a=$(fd -t d -H | fzf) && tmux new-session -c "$a" -s "$(basename "$a")"'
+alias ff='fastfetch'
+alias cdir='pwd | wl-copy'
+alias cfile='cat $1 | wl-copy'
+alias bat='upower -i /org/freedesktop/UPower/devices/battery_BAT0| grep -E "state|to full|percentage"'
+
+# Starship initialization
+eval "$(starship init zsh)"
+
+# opam configuration (using source as in Zsh)
+source /home/shashank/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+# Created by `pipx` on 2024-02-17 06:26:26
+# for zoxide
+eval "$(zoxide init zsh)"
