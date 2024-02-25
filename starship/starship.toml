@@ -1,8 +1,46 @@
 "$schema" = 'https://starship.rs/config-schema.json'
+
 add_newline = true
+
+# [character]
+# error_symbol = '[➜](bold red)'
+# success_symbol = '[➜](bold green)'
+#
+# [package]
+# disabled = true
+#
+
+# [character]
+# success_symbol = "➜"
+# style = "bold blue"
+#
+# [user]
+# style = "bold blue"
+#
+# [hostname]
+# truncation_length = 10
+# style = "bold blue"
+#
+# [directory]
+# truncation_length = 5
+# style = "bold white"
+
+
 [character]
-success_symbol = '[➜](bold green)'
+success_symbol = "[➜](bold green)"
 
-[package]
-disabled = true
+[user]
+style = "bold cyan"
 
+[hostname]
+style = "bold cyan"
+
+[git]
+branch_symbol = "git:"
+branch_style = "bold cyan"
+status_style = "yellow"
+
+[battery]
+full_symbol = "[](bold green)"
+discharging_symbol = "[](bold yellow)"
+style = "yellow"
