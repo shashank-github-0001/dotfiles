@@ -127,17 +127,10 @@ local plugins = {
         end
     },
     ---------------------------------------------------------------------
-    ---------------------------------------------------------------------
-    ---------------------------------------------------------------------
-    ---------------------------------------------------------------------
-    ---------------------------------------------------------------------
-    ---------------------------------------------------------------------
 }
 
 local opts = {}
 require("lazy").setup(plugins, opts)
-
-
 
 --configure all the plugins
 
@@ -149,7 +142,7 @@ vim.cmd("colorscheme carbonfox")
 
 --treesitter
 require("nvim-treesitter.configs").setup({
-    ensure_installed = { "c", "lua", "cpp", "rust", "python", "java" },
+    ensure_installed = { "c", "lua", "cpp", "rust",  "java" },
     sync_install = false,
     auto_install = true,
     highlight = {
@@ -176,7 +169,7 @@ require("mason").setup({
     }
 })
 require("mason-lspconfig").setup({
-    ensure_installed = { "rust_analyzer", "clangd", "pyright", "tsserver", "lua_ls", "jdtls", "jsonls",},
+    ensure_installed = { "rust_analyzer", "clangd", "lua_ls", "jdtls", "jsonls",},
 })
 local lspconfig = require("lspconfig")
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -234,16 +227,13 @@ cmp.setup.cmdline(':', {
     })
 })
 
-lspconfig.pyright.setup({ capabilities = capabilities })
 lspconfig.rust_analyzer.setup({ capabilities = capabilities })
 lspconfig.clangd.setup({ capabilities = capabilities })
-lspconfig.tsserver.setup({ capabilities = capabilities })
 lspconfig.lua_ls.setup({ capabilities = capabilities })
 lspconfig.jdtls.setup({ capabilities = capabilities })
 lspconfig.jsonls.setup({ capabilities = capabilities })
-lspconfig.htmx.setup({ capabilities = capabilities })
-lspconfig.emmet_language_server.setup({ capabilities = capabilities })
 lspconfig.bashls.setup({ capabilities = capabilities })
+lspconfig.marksman.setup({ capabilities = capabilities })
 
 
 
@@ -284,7 +274,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 --lualine
 require('lualine').setup()
-
 
 
 --personal remaps

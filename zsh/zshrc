@@ -41,7 +41,7 @@ export PATH="$PATH:/home/shashank/.local/bin"
 
 # Environment variables
 export EDITOR="nvim"
-export STARSHIP_CONFIG="$HOME/example/non/default/path/starship.toml"
+export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 
 # Aliases (using the same syntax)
 alias l='exa -al'
@@ -63,6 +63,5 @@ eval "$(starship init zsh)"
 # opam configuration (using source as in Zsh)
 source /home/shashank/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
-# Created by `pipx` on 2024-02-17 06:26:26
 # for zoxide
 eval "$(zoxide init zsh)"
