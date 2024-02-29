@@ -1,0 +1,28 @@
+vim.opt.number         = true
+vim.opt.relativenumber = true
+vim.opt.tabstop        = 4
+vim.opt.shiftwidth     = 4
+vim.opt.softtabstop    = 4
+vim.opt.expandtab      = true
+vim.opt.swapfile       = false
+vim.opt.clipboard      = "unnamedplus"
+vim.opt.smartindent    = true
+vim.opt.wrap           = false
+vim.opt.undofile       = true
+vim.opt.hlsearch       = false
+vim.opt.incsearch      = true
+vim.opt.scrolloff      = 8
+vim.opt.signcolumn     = "yes"
+vim.opt.cursorline     = true
+vim.g.mapleader        = " "
+vim.g.maplocalleader   = " "
+vim.opt.updatetime     = 50
+vim.opt.colorcolumn    = "1000"
+vim.opt.termguicolors  = true
+vim.opt.guicursor      = "a:block-blinkon0"
+vim.o.scrolloff        = 10
+vim.g.vimwiki_list     = { {
+    syntax = "markdown",
+    ext = ".md"
+} }
+

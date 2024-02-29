@@ -59,12 +59,6 @@ local plugins = {
     },
     ---------------------------------------------------------------------
     {
-        'windwp/nvim-autopairs',
-        event = "InsertEnter",
-        opts = {}
-    },
-    ---------------------------------------------------------------------
-    {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
         "neovim/nvim-lspconfig",
@@ -78,11 +72,6 @@ local plugins = {
         'hrsh7th/nvim-cmp',
         'L3MON4D3/LuaSnip',
         'saadparwaiz1/cmp_luasnip',
-    },
-    ---------------------------------------------------------------------
-    {
-        "nvim-tree/nvim-tree.lua",
-        dependencies = { "nvim-tree/nvim-web-devicons" }
     },
     ---------------------------------------------------------------------
     {
