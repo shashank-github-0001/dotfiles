@@ -80,8 +80,6 @@ local plugins = {
         'saadparwaiz1/cmp_luasnip',
     },
     ---------------------------------------------------------------------
-    { "EdenEast/nightfox.nvim" },
-    ---------------------------------------------------------------------
     {
         "nvim-tree/nvim-tree.lua",
         dependencies = { "nvim-tree/nvim-web-devicons" }
@@ -137,7 +135,6 @@ require("lazy").setup(plugins, opts)
 
 
 --colorscheme
-vim.cmd("colorscheme carbonfox")
 
 
 --treesitter

@@ -1,3 +1,4 @@
+fastfetch
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -54,9 +55,10 @@ alias t='a=$(fd -t d -H | fzf) && tmux new-session -c "$a" -s "$(basename "$a")"
 alias ff='fastfetch'
 alias cdir='pwd | wl-copy'
 alias cfile='cat $1 | wl-copy'
-alias bat='upower -i /org/freedesktop/UPower/devices/battery_BAT0| grep -E "state|to full|percentage"'
+alias batt='upower -i /org/freedesktop/UPower/devices/battery_BAT0| grep -E "state|to full|percentage"'
 alias cd='z'
 alias net='networkctl status'
+alias vim='nvim -u NONE'
 
 # Starship initialization
 eval "$(starship init zsh)"
