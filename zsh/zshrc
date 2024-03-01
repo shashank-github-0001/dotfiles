@@ -28,7 +28,9 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="/home/shashank/.nimble/bin:$PATH"
 export PATH="$HOME/flutter/bin:$PATH"
 export PATH="$HOME/.local/share/:$PATH"
-export PATH="$PATH:/home/shashank/.local/bin"
+export PATH="$PATH/home/shashank/.local/bin:$PATH"
+export PATH="$HOME/.zfunc/:$PATH"
+fpath+=~/.zfunc
 
 # Environment variables
 export EDITOR="nvim"
@@ -48,7 +50,6 @@ alias cfile='cat $1 | wl-copy'
 alias batt='upower -i /org/freedesktop/UPower/devices/battery_BAT0| grep -E "state|to full|percentage"'
 alias cd='z'
 alias net='networkctl status'
-# alias nvim='nvim -u ~/.config/nvim/basic.lua'
 alias nvim='nvim -u ~/.config/nvim/init.lua'
 
 # Starship initialization
