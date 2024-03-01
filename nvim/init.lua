@@ -114,6 +114,9 @@ local plugins = {
         end
     },
     ---------------------------------------------------------------------
+    --colorscheme
+    { "EdenEast/nightfox.nvim" },
+    ---------------------------------------------------------------------
 }
 
 local opts = {}
@@ -124,6 +127,7 @@ require("lazy").setup(plugins, opts)
 
 
 --colorscheme
+vim.cmd("colorscheme carbonfox")
 
 
 --treesitter
