@@ -19,7 +19,6 @@ vim.g.maplocalleader   = " "
 vim.opt.updatetime     = 50
 vim.opt.colorcolumn    = "1000"
 vim.opt.termguicolors  = true
-vim.opt.guicursor      = "a:block-blinkon0"
 vim.o.scrolloff        = 10
 vim.g.vimwiki_list     = { {
     syntax = "markdown",
@@ -117,6 +116,8 @@ local plugins = {
     --colorscheme
     { "EdenEast/nightfox.nvim" },
     ---------------------------------------------------------------------
+    { 'dylanaraps/wal.vim'},
+    ---------------------------------------------------------------------
 }
 
 local opts = {}
@@ -127,7 +128,8 @@ require("lazy").setup(plugins, opts)
 
 
 --colorscheme
-vim.cmd("colorscheme carbonfox")
+-- vim.cmd("colorscheme carbonfox")
+vim.cmd("colorscheme wal")
 
 
 --treesitter
@@ -159,7 +161,7 @@ require("mason").setup({
     }
 })
 require("mason-lspconfig").setup({
-    ensure_installed = { "rust_analyzer", "clangd", "lua_ls", "jdtls", "jsonls",},
+    ensure_installed = { "rust_analyzer", "clangd", "lua_ls"},
 })
 local lspconfig = require("lspconfig")
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -220,8 +222,6 @@ cmp.setup.cmdline(':', {
 lspconfig.rust_analyzer.setup({ capabilities = capabilities })
 lspconfig.clangd.setup({ capabilities = capabilities })
 lspconfig.lua_ls.setup({ capabilities = capabilities })
-lspconfig.jdtls.setup({ capabilities = capabilities })
-lspconfig.jsonls.setup({ capabilities = capabilities })
 lspconfig.bashls.setup({ capabilities = capabilities })
 lspconfig.marksman.setup({ capabilities = capabilities })
 

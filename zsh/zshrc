@@ -1,19 +1,22 @@
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
 setopt autocd beep extendedglob nomatch notify
 bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
+HISTSIZE=1000
+SAVEHIST=1000
+HISTFILE=~/.histfile
 zstyle :compinstall filename '/home/shashank/.zshrc'
 
 autoload -Uz compinit
+zstyle ':completion"*' menu select
+zmodload zsh/complist
 compinit
 # End of lines added by compinstall
  
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # source ~/.zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+# source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -47,10 +50,9 @@ alias t='a=$(fd -t d -H | fzf) && tmux new-session -c "$a" -s "$(basename "$a")"
 alias ff='fastfetch'
 alias cdir='pwd | wl-copy'
 alias cfile='cat $1 | wl-copy'
-alias batt='upower -i /org/freedesktop/UPower/devices/battery_BAT0| grep -E "state|to full|percentage"'
+alias batt='upower -i /org/freedesktop/UPower/devices/battery_BAT0| grep -E "state |percentage"'
 alias cd='z'
 alias net='networkctl status'
-alias nvim='nvim -u ~/.config/nvim/init.lua'
 
 # Starship initialization
 eval "$(starship init zsh)"
