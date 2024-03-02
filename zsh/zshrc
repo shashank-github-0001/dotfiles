@@ -11,17 +11,16 @@ autoload -Uz compinit
 zstyle ':completion"*' menu select
 zmodload zsh/complist
 compinit
-# End of lines added by compinstall
  
-# source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-# source ~/.zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-# source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+ 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Path additions (using PATH instead of fish_user_paths)
+ 
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.cargo/env:$PATH"
 export PATH="$HOME/binaries:$PATH"
