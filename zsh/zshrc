@@ -20,6 +20,12 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.pl
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Path additions (using PATH instead of fish_user_paths)
+# ranking mirror
+# first go to su -
+# cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
+# then do the 
+# rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist
+# all of this should be done while youre in su -
  
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.cargo/env:$PATH"
