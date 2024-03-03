@@ -49,7 +49,7 @@ alias t='a=$(fd -t d -H | fzf) && tmux new-session -c "$a" -s "$(basename "$a")"
 alias ff='fastfetch'
 alias cdir='pwd | wl-copy'
 alias cfile='cat $1 | wl-copy'
-alias batt='upower -i /org/freedesktop/UPower/devices/battery_BAT0| grep -E "state |percentage"'
+alias batt='upower -i /org/freedesktop/UPower/devices/battery_BAT0| grep -E "state | percentage"'
 alias cd='z'
 alias net='networkctl status'
 

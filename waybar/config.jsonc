@@ -1,0 +1,57 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 30, // Waybar height (to be removed for auto height)
+    "spacing": 4, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": ["hyprland/workspaces", "hyprland/mode", "hyprland/scratchpad", "custom/media", "hyprland/window"],
+    "modules-right": ["pulseaudio", "network", "battery", "clock", "tray"],
+    // Modules configuration
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{name}: {icon}",
+        "format-icons": {
+            "1": "T",
+            "2": "F",
+            "3": "S",
+            "urgent": "UR",
+            "focused": "FO",
+            "default": "DE"
+        }
+    },
+
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+
+    "clock": {
+        "tooltip-format": "<big>[ {:%Y %B} ]</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "[ {:%Y-%m-%d} ]"
+    },
+
+    "network": {
+        "format-wifi": "IP:[ {essid} ] SIGS:[ {signalStrength} ]",
+        "tooltip-format": "NAME:[ {ifname} ] ADDR:[ {gwaddr} ]",
+        "format-disconnected": "DISCON",
+    },
+
+    "pulseaudio": {
+        "format": "SPE:[ {volume} ] {format_source}",
+        "format-bluetooth": "BMIC:[ {volume} ] {format_source}",
+        "format-bluetooth-muted": "MUTED",
+        "format-muted": "MUTED",
+        "format-source": " MIC:[ {volume} ]",
+        "format-source-muted": "MUTED",
+        "on-click": "pavucontrol"
+    },
+
+    "battery": {
+        "format": "BAT:[ {capacity} ]"
+    }
+
+}
+
