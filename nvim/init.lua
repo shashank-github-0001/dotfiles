@@ -118,6 +118,11 @@ local plugins = {
     ---------------------------------------------------------------------
     { 'dylanaraps/wal.vim'},
     ---------------------------------------------------------------------
+    {
+        'Exafunction/codeium.vim',
+        event = 'BufEnter'
+    },
+    ---------------------------------------------------------------------
 }
 
 local opts = {}
@@ -126,11 +131,9 @@ require("lazy").setup(plugins, opts)
 --configure all the plugins
 
 
-
 --colorscheme
 -- vim.cmd("colorscheme carbonfox")
 vim.cmd("colorscheme wal")
-
 
 --treesitter
 require("nvim-treesitter.configs").setup({
