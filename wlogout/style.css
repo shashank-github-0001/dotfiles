@@ -22,7 +22,7 @@ button {
 
 button:focus, button:active, button:hover {
     border-radius: 20;
-    background-color: #caabea;
+    background-color: #b868f5;
     outline-style: none;
 }
 

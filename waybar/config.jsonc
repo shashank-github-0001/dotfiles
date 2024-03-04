@@ -1,13 +1,10 @@
 {
     "layer": "top", // Waybar at top layer
     "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 30, // Waybar height (to be removed for auto height)
+    // "height": 35, // Waybar height (to be removed for auto height)
     "spacing": 4, // Gaps between modules (4px)
-    // Choose the order of the modules
-    "modules-left": ["hyprland/workspaces", "hyprland/mode", "hyprland/scratchpad", "custom/media"],
+    "modules-left": ["hyprland/workspaces", "custom/media"],
     "modules-right": ["pulseaudio", "network", "battery", "clock", "tray"],
-    // Modules configuration
-
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
@@ -31,7 +28,6 @@
     },
 
     "tray": {
-        // "icon-size": 21,
         "spacing": 10
     },
 
@@ -43,7 +39,7 @@
     "network": {
         "format-wifi": "IP:[ {essid} ] SIGS:[ {signalStrength} ]",
         "tooltip-format": "NAME:[ {ifname} ] ADDR:[ {gwaddr} ]",
-        "format-disconnected": "[ DISCON ]",
+        "format-disconnected": "[ DISCON ]"
     },
 
     "pulseaudio": {
@@ -61,4 +57,3 @@
     }
 
 }
-

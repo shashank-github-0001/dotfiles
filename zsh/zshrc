@@ -1,3 +1,4 @@
+source ~/.cache/wal/colors.sh
 setopt autocd beep extendedglob nomatch notify
 bindkey -v
 # End of lines configured by zsh-newuser-install
@@ -56,7 +57,7 @@ alias rate='sudo rate-mirrors --allow-root --protocol https arch | tee /etc/pacm
 alias rankmirr='rankmirrors -n 6 /etc/pacman.d/mirrorlist.bak > /etc/pacman.d/mirrorlist'
 alias backupmirrors='sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak'
 alias gall='git add . && git commit -am "$(date)" && git push -u origin main'
-alias t='a=$(fd -t d -H | fzf) && tmux new-session -c "$a" -s "$(basename "$a")"'
+alias t='a=$(fd -t d -H | fzf) && tmux new -c "$a" -s "$(basename "$a")"'
 alias ff='fastfetch'
 alias cdir='pwd | wl-copy'
 alias cfile='cat $1 | wl-copy'

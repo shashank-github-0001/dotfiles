@@ -1,14 +1,12 @@
 * {
   font-family: JetBrainsMono Nerd Font, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-  font-size: 15px;
-  background-color: #000000; /* Black background */
-  color: #ffffff;            /* White text */
+  font-size: 18px;
+  background-color: #0A0F0A; /* Black background */
+  color: #bec6bf;            /* White text */
 }
 
 window#waybar {
-  background-color: rgba(0, 0, 0, 1.0);
   border-bottom: 3px solid rgba(100, 114, 125, 0.5);
-  color: #ffffff;
   transition-property: background-color;
   transition-duration: .5s;
 }
@@ -31,7 +29,6 @@ window#waybar.termite {
 }
 
 window#waybar.chromium {
-  background-color: #000000;
   border: none;
 }
 
@@ -53,20 +50,16 @@ button:hover {
   padding: 0 5px;
   /* Remove hover effect, keep black background */
   /* background-color: transparent; */
-  color: #ffffff;
 }
 
 #workspaces button.focused {
-  background-color: #64727D;
   box-shadow: inset 0 -3px #ffffff;
 }
 
 #workspaces button.urgent {
-  background-color: #eb4d4b;
 }
 
 #mode {
-  background-color: #000000; /* Black background */
   border-bottom: 3px solid #ffffff;
 }
 
@@ -86,8 +79,6 @@ button:hover {
 #scratchpad,
 #mpd {
   padding: 0 10px;
-  color: #ffffff; /* White text */
-  background-color: #000000; /* Black background */
 }
 
 #window,
