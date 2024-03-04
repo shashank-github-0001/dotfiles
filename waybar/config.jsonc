@@ -4,7 +4,7 @@
     "height": 30, // Waybar height (to be removed for auto height)
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
-    "modules-left": ["hyprland/workspaces", "hyprland/mode", "hyprland/scratchpad", "custom/media", "hyprland/window"],
+    "modules-left": ["hyprland/workspaces", "hyprland/mode", "hyprland/scratchpad", "custom/media"],
     "modules-right": ["pulseaudio", "network", "battery", "clock", "tray"],
     // Modules configuration
 
@@ -12,11 +12,17 @@
         "disable-scroll": true,
         "all-outputs": true,
         "warp-on-scroll": false,
-        "format": "{name}: {icon} | ",
+        "format": " [{name}:{icon}]",
         "format-icons": {
             "1": "T",
             "2": "F",
             "3": "S",
+            "4": "N",
+            "5": "N",
+            "6": "N",
+            "7": "N",
+            "8": "N",
+            "9": "N",
             "urgent": "UR",
             "focused": "FO",
             "default": "DE"
