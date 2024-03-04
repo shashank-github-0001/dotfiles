@@ -120,10 +120,17 @@ local plugins = {
     ---------------------------------------------------------------------
     {
         'Exafunction/codeium.vim',
-        event = 'BufEnter'
+        event = 'BufEnter',
+        config = function ()
+            vim.keymap.set('i', '<C-Space>', function () return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
+            vim.keymap.set('i', '<C-N>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true, silent = true })
+            vim.keymap.set('i', '<c-P>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true })
+            vim.keymap.set('i', '<C-X>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
+        end
     },
     ---------------------------------------------------------------------
 }
+
 
 local opts = {}
 require("lazy").setup(plugins, opts)
@@ -186,7 +193,7 @@ cmp.setup({
     mapping = cmp.mapping.preset.insert({
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
-        ['<C-Space>'] = cmp.mapping.complete(),
+        -- ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.abort(),
         ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     }),
