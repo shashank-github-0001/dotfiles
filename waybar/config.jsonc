@@ -13,6 +13,7 @@
         "all-outputs": true,
         "warp-on-scroll": false,
         "format": " [{name}:{icon}]",
+        "on-click": "activate",
         "format-icons": {
             "1": "T",
             "2": "F",

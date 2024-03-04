@@ -26,6 +26,9 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.pl
 # then do the 
 # rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist
 # all of this should be done while youre in su -
+# if anything gets fucked up just try this
+# sudo reflector --country 'India' --latest 5 --age 2 --fastest 5 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+# this is using reflector
  
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.cargo/env:$PATH"
@@ -46,8 +49,8 @@ export EDITOR="nvim"
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 
 # Aliases (using the same syntax)
-alias l='exa -al'
-alias ls='exa'
+alias l='lsd -al'
+alias ls='lsd'
 alias f='cd $(fd -t d -H | fzf)'
 alias rate='sudo rate-mirrors --allow-root --protocol https arch | tee /etc/pacman.d/mirrorlist'
 alias rankmirr='rankmirrors -n 6 /etc/pacman.d/mirrorlist.bak > /etc/pacman.d/mirrorlist'
