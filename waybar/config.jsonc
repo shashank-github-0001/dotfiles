@@ -43,7 +43,7 @@
     "network": {
         "format-wifi": "IP:[ {essid} ] SIGS:[ {signalStrength} ]",
         "tooltip-format": "NAME:[ {ifname} ] ADDR:[ {gwaddr} ]",
-        "format-disconnected": "DISCON",
+        "format-disconnected": "[ DISCON ]",
     },
 
     "pulseaudio": {
