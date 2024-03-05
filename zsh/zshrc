@@ -1,6 +1,5 @@
 source ~/.cache/wal/colors.sh
 setopt autocd beep extendedglob nomatch notify
-bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 HISTSIZE=1000
@@ -15,6 +14,7 @@ compinit
  
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
  
