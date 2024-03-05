@@ -61,6 +61,7 @@ alias t='a=$(fd -t d -H | fzf) && tmux new -c "$a" -s "$(basename "$a")"'
 alias ff='fastfetch'
 alias cdir='pwd | wl-copy'
 alias cfile='cat $1 | wl-copy'
+alias bat='upower -i /org/freedesktop/UPower/devices/battery_BAT0| grep -E "state|to full|percentage"'
 alias cd='z'
 
 # Starship initialization

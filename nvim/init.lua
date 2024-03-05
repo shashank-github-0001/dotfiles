@@ -130,6 +130,8 @@ local plugins = {
         end
     },
     ---------------------------------------------------------------------
+    { "rose-pine/neovim", name = "rose-pine" },
+    ---------------------------------------------------------------------
 }
 
 
@@ -142,6 +144,7 @@ require("lazy").setup(plugins, opts)
 --colorscheme
 vim.cmd("colorscheme carbonfox")
 -- vim.cmd("colorscheme wal")
+-- vim.cmd("colorscheme rose-pine")
 
 --treesitter
 require("nvim-treesitter.configs").setup({
