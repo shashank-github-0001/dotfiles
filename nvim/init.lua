@@ -116,6 +116,7 @@ local plugins = {
     --colorscheme
     { "EdenEast/nightfox.nvim" },
     ---------------------------------------------------------------------
+    --colorscheme
     { 'dylanaraps/wal.vim'},
     ---------------------------------------------------------------------
     {
@@ -139,8 +140,8 @@ require("lazy").setup(plugins, opts)
 
 
 --colorscheme
--- vim.cmd("colorscheme carbonfox")
-vim.cmd("colorscheme wal")
+vim.cmd("colorscheme carbonfox")
+-- vim.cmd("colorscheme wal")
 
 --treesitter
 require("nvim-treesitter.configs").setup({
