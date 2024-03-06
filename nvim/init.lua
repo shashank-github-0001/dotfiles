@@ -24,6 +24,8 @@ vim.g.vimwiki_list     = { {
     syntax = "markdown",
     ext = ".md"
 } }
+-- gui options
+vim.opt.guifont = { "JetBrainsMono Nerd Font", ":h15" }
 
 local lazypath         = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then

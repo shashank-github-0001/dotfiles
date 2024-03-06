@@ -65,6 +65,8 @@ alias bat='upower -i /org/freedesktop/UPower/devices/battery_BAT0| grep -E "stat
 alias cd='z'
 alias file='yazi'
 alias convertpng='mogrify -format png *.jpg'
+alias feh='feh -.'
+alias nvim='neovide'
 
 # Starship initialization
 eval "$(starship init zsh)"
