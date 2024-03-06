@@ -279,7 +279,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 
 --lualine
-require('lualine').setup()
+require('lualine').setup({})
 
 
 --personal remaps
