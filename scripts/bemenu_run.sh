@@ -1,3 +1,5 @@
 #!/usr/bin/zsh 
  
-bemenu-run -l 10 -b
+killall bemenu
+killall bemenu-run
+bemenu-run -b -p "APP: " --fn 'JerBrainsMono Nerd Font [20]'
