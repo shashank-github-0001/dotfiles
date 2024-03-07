@@ -41,6 +41,7 @@ export PATH="$HOME/.local/share/:$PATH"
 export PATH="$PATH/home/shashank/.local/bin:$PATH"
 export PATH="$HOME/.zfunc/:$PATH"
 export XDG_CURRENT_DESKTOP="Hyprland"
+export XDG_CONFIG_HOME="$HOME/.config"
 fpath+=~/.zfunc
 
 # Environment variables
