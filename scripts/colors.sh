@@ -1,3 +1,3 @@
 #!/usr/bin/zsh
 
-notify-send -t 2500 $(hyprpicker)
+notify-send -t 2500 "$(hyprpicker)"
