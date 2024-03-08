@@ -25,7 +25,7 @@ vim.g.vimwiki_list     = { {
     ext = ".md"
 } }
 -- gui options
-vim.opt.guifont = { "JetBrainsMono Nerd Font", ":h15" }
+vim.opt.guifont = { "JetBrainsMono Nerd Font", ":h12" }
 
 local lazypath         = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
