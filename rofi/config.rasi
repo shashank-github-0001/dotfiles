@@ -1,12 +1,12 @@
 configuration {
-modes: "window,drun,run,ssh";
-font: "JetBrains Mono Nerd Font 15";
-      fixed-num-lines: false;
-      show-icons: true;
-          drun-display-format: "{name} [<span weight='bold' size='small'><i>({generic})</i></span>]";
-          drun-url-launcher: "xdg-open";
-          disable-history: false;
-          ignored-prefixes: "";
+    modes: "window,drun,run,ssh";
+    font: "JetBrains Mono Nerd Font 10";
+    fixed-num-lines: false;
+    show-icons: true;
+    drun-display-format: "{name} [<span weight='bold' size='small'><i>({generic})</i></span>]";
+      drun-url-launcher: "firefox";
+      disable-history: true;
+      ignored-prefixes: "";
 sort: false;
       sorting-method: "normal";
     case-sensitive: false;
