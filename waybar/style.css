@@ -37,7 +37,6 @@ window#waybar.chromium {
 button {
     box-shadow: inset 0 -3px transparent;
     border: none;
-    border-radius: 0;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
@@ -50,7 +49,7 @@ button:hover {
     padding: 0 5px;
     background-color: @background;
     color: @color6;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 #workspaces button:hover {
@@ -92,7 +91,7 @@ button:hover {
 #mpd {
     color: @color6;
     padding: 0 10px;
-    border-radius: 10px;
+    border-radius: 5px;
     border: 2px solid black;
     background-color: @background;
 }
