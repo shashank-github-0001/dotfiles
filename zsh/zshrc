@@ -49,7 +49,7 @@ export EDITOR="nvim"
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 
 # Aliases (using the same syntax)
-alias l='lsd -al'
+alias l='lsd -Al --color always --group-dirs first'
 alias ls='lsd'
 alias f='cd $(fd -t d -H | fzf)'
 alias rankmirr='rankmirrors -n 6 /etc/pacman.d/mirrorlist.bak > /etc/pacman.d/mirrorlist'
