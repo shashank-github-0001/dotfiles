@@ -1,0 +1,8 @@
+require("shashank.plug")
+require("shashank.remaps")
+require("shashank.settings")
+require("shashank.lsp_shit")
+require("shashank.statusline")
+require("shashank.ts")
+require("shashank.tscope")
+require("shashank.vide")

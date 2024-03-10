@@ -59,11 +59,19 @@ alias ff='fastfetch'
 alias cdir='pwd | wl-copy'
 alias b='upower -i /org/freedesktop/UPower/devices/battery_BAT0| grep -E "state|to full|percentage"'
 alias cd='z'
-alias file='yazi'
 alias convertpng='mogrify -format png *.jpg'
 alias v='pamixer --get-volume'
 alias sv='pamixer --set-volume $1'
 alias nv='neovide'
+
+function ya() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
 
 # Starship initialization
 eval "$(starship init zsh)"
