@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 set $term kitty
-set $menu bemenu-run
+set $menu rofi -show run
 
 # setting font
 font pango:JetBrainsMono Nerd Font 10
@@ -24,14 +24,9 @@ default_border pixel 2
 smart_borders on
 # colors
 # class                 border  backgr. text    indicator child_border
-client.focused          $color1 $background $foreground #2e9ef4   #285577
-client.focused_inactive $color2  #5f676a #ffffff #484e50   #5f676a
-client.unfocused        #333333 #222222 #888888 #292d2e   #222222
-client.urgent           #2f343a #900000 #ffffff #900000   #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
-
-client.background       #ffffff
-
+client.focused          $color1 $background $foreground $color2 $color3
+client.focused_inactive $color2 $background $foreground $color3 $color4
+ 
 ### Output configuration
 #
 
@@ -63,6 +58,18 @@ client.background       #ffffff
 #
 # Basics:
 #
+
+# important bindings
+bindsym XF86AudioRaiseVolume exec pamixer -i 5
+bindsym XF86AudioLowerVolume exec pamixer -d 5
+bindsym XF86AudioMute exec pamixer -t
+bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
+bindsym XF86MonBrightnessUp exec brightnessctl s +5%
+
+# my personal bindings
+bindsym $alt+t exec reload.sh
+bindsym $alt+f exec kitty -e yazi
+
     # Start a terminal
     bindsym $mod+Return exec $term
 
@@ -82,6 +89,8 @@ client.background       #ffffff
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
+
+
 #
 
     # Move your focus around
@@ -205,5 +214,3 @@ bindsym $mod+r mode "resize"
 
 include /etc/sway/config.d/*
 
-# my personal bindings
-bindsym $alt+t exec reload.sh

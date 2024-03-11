@@ -49,7 +49,7 @@ button:hover {
     padding: 0 5px;
     background-color: @background;
     color: @color6;
-    border-radius: 5px;
+    border-radius: 2px;
 }
 
 #workspaces button:hover {
@@ -62,11 +62,9 @@ button:hover {
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
 }
 
 #mode {
-    background-color: #64727D;
 }
 
 #clock,

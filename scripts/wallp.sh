@@ -2,6 +2,7 @@
 
 wallpaper=$1
 wal -i "$wallpaper" 
+killall swaybg
 killall waybar
 killall swaync
 sleep 0.5
