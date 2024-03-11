@@ -4,7 +4,10 @@ include ~/.cache/wal/colors-sway
 
 # startup things
 exec reload.sh
-exec colors-sway
+exec swaybg -i "$wallpaper" -m fill
+exec swaync
+exec waybar
+exec wal -R
 
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
@@ -69,6 +72,10 @@ bindsym XF86MonBrightnessUp exec brightnessctl s +5%
 # my personal bindings
 bindsym $alt+t exec reload.sh
 bindsym $alt+f exec kitty -e yazi
+
+# screenshots
+bindsym $mod+Shift+p exec save_screenshot.sh
+bindsym $mod+p exec copy_screenshot.sh
 
     # Start a terminal
     bindsym $mod+Return exec $term
