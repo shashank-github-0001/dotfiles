@@ -1,4 +1,4 @@
 #!/usr/bin/zsh
 
-FILENAME="screenshot-`date +%F-%T`"
-notify-send -t 2000 "$(grimblast copy screen ~/Screenshots/$FILENAME.png)"
+grimshot copy active
+notify-send -t 1000 "screenshot saved to clipboard"

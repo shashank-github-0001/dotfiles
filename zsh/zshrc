@@ -40,7 +40,8 @@ export PATH="/home/shashank/.nimble/bin:$PATH"
 export PATH="$HOME/.local/share/:$PATH"
 export PATH="$PATH/home/shashank/.local/bin:$PATH"
 export PATH="$HOME/.zfunc/:$PATH"
-export XDG_CURRENT_DESKTOP="Hyprland"
+export XDG_CURRENT_DESKTOP="Sway"
+export SWAY_SCREENSHOT_DIR="~/Screenshots/"
 export XDG_CONFIG_HOME="$HOME/.config"
 fpath+=~/.zfunc
 
@@ -62,7 +63,7 @@ alias cd='z'
 alias convertpng='mogrify -format png *.jpg'
 alias v='pamixer --get-volume'
 alias sv='pamixer --set-volume $1'
-alias nv='neovide'
+alias nvim='neovide'
 
 function ya() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
