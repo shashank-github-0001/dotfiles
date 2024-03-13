@@ -63,16 +63,7 @@ alias cd='z'
 alias convertpng='mogrify -format png *.jpg'
 alias v='pamixer --get-volume'
 alias sv='pamixer --set-volume $1'
-alias nvim='neovide'
-
-function ya() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
-}
+alias vi='neovide'
 
 # Starship initialization
 eval "$(starship init zsh)"

@@ -131,6 +131,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 #
 # Workspaces:
+workspace_layout tabbed
 #
 
 # Switch to workspace
