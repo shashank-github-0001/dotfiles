@@ -94,6 +94,13 @@ local plugins = {
     ---------------------------------------------------------------------
     { "rose-pine/neovim", name = "rose-pine" },
     ---------------------------------------------------------------------
+    {
+        "nvim-neorg/neorg",
+        build = ":Neorg sync-parsers",
+        lazy = false,
+        dependencies = { "nvim-lua/plenary.nvim" },
+    },
+    ---------------------------------------------------------------------
 }
 
 local opts = {}
