@@ -68,8 +68,8 @@ input "1739:52861:SYNA32C6:00_06CB:CE7D_Touchpad" {
 bindsym XF86AudioRaiseVolume exec pamixer -i 5
 bindsym XF86AudioLowerVolume exec pamixer -d 5
 bindsym XF86AudioMute exec pamixer -t
-bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
-bindsym XF86MonBrightnessUp exec brightnessctl s +5%
+bindsym XF86MonBrightnessDown exec brightnessctl s 1%-
+bindsym XF86MonBrightnessUp exec brightnessctl s +1%
 
 # my personal bindings
 bindsym $alt+t exec reload.sh
