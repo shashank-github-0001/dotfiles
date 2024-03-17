@@ -86,7 +86,7 @@ button:hover {
 #mpd {
     color: @color6;
     padding: 0 10px;
-    border-radius: 5px;
+    border-radius: 2px;
     border: 2px solid black;
     background-color: @background;
 }

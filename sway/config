@@ -3,7 +3,6 @@ include ~/.cache/wal/colors-sway
 
 
 # startup things
-exec reload.sh
 exec swaybg -i "$wallpaper" -m fill
 exec swaync
 exec waybar
