@@ -11,7 +11,6 @@ vim.opt.wrap           = false
 vim.opt.undofile       = true
 vim.opt.hlsearch       = false
 vim.opt.incsearch      = true
-vim.opt.scrolloff      = 8
 vim.opt.signcolumn     = "yes"
 vim.opt.cursorline     = true
 vim.g.mapleader        = " "
@@ -19,5 +18,5 @@ vim.g.maplocalleader   = " "
 vim.opt.updatetime     = 50
 vim.opt.colorcolumn    = "1000"
 vim.opt.termguicolors  = true
-vim.o.scrolloff        = 10
+-- vim.o.scrolloff        = 10
 vim.cmd("colorscheme carbonfox")

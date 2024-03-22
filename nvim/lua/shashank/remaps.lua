@@ -5,3 +5,6 @@ vim.keymap.set('n', '<C-b>', '<C-b>zz');
 vim.keymap.set('n', '<leader>m', ':Mason<CR>');
 vim.keymap.set('n', '<leader>la', ':Lazy<CR>');
 vim.keymap.set('n', '<leader>al', 'GVgg=G');
+vim.keymap.set('n', '<C-t>', ':tabnew<CR>')
+vim.keymap.set('n', '<C-l>', ':tabnext<CR>')
+vim.keymap.set('n', '<C-c>', ':close<CR>')

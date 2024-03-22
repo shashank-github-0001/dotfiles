@@ -48,7 +48,7 @@ button:hover {
 #workspaces button {
     padding: 0 5px;
     background-color: @background;
-    color: @color6;
+    color: @foreground;
     border-radius: 2px;
 }
 
@@ -84,7 +84,7 @@ button:hover {
 #idle_inhibitor,
 #scratchpad,
 #mpd {
-    color: @color6;
+    color: @foreground;
     padding: 0 10px;
     border-radius: 2px;
     border: 2px solid black;
@@ -103,15 +103,12 @@ button:hover {
 }
 
 #clock {
-    color: @color6;
 }
 
 #battery {
-    color: @color6;
 }
 
 #battery.charging, #battery.plugged {
-    color: @color6;
 }
 
 @keyframes blink {
