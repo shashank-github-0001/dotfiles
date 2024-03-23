@@ -101,6 +101,14 @@ local plugins = {
         dependencies = { "nvim-lua/plenary.nvim" },
     },
     ---------------------------------------------------------------------
+    {
+        "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {},
+    }
+
+    ---------------------------------------------------------------------
 }
 
 local opts = {}

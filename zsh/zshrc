@@ -43,6 +43,7 @@ export PATH="$HOME/.zfunc/:$PATH"
 export XDG_CURRENT_DESKTOP="Sway"
 export SWAY_SCREENSHOT_DIR="~/Screenshots/"
 export XDG_CONFIG_HOME="$HOME/.config"
+export DISPLAY=:0
 fpath+=~/.zfunc
 
 # Environment variables
