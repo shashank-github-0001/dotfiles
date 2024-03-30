@@ -30,6 +30,7 @@ source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 # its from libreoffice 
 # you can do soffice --headless --convert-to pdf *.docx
  
+unset DISPLAY
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.cargo/env:$PATH"
 export PATH="$HOME/binaries:$PATH"
@@ -43,12 +44,12 @@ export PATH="$HOME/.zfunc/:$PATH"
 export XDG_CURRENT_DESKTOP="Sway"
 export SWAY_SCREENSHOT_DIR="~/Screenshots/"
 export XDG_CONFIG_HOME="$HOME/.config"
-export DISPLAY=:0
 fpath+=~/.zfunc
 
 # Environment variables
 export EDITOR="nvim"
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
+# export DISPLAY=:0.0
 
 # Aliases (using the same syntax)
 alias l='lsd -Al --color always --group-dirs first'
@@ -62,10 +63,13 @@ alias ff='fastfetch'
 alias cdir='pwd | wl-copy'
 alias b='upower -i /org/freedesktop/UPower/devices/battery_BAT0| grep -E "state|to full|percentage"'
 alias cd='z'
-alias convertpng='mogrify -format png *.jpg'
+alias convertpng='mogrify -format jpg *.png'
 alias v='pamixer --get-volume'
 alias sv='pamixer --set-volume $1'
 alias vi='neovide'
+alias update='sudo pacman -Syyu && paru -Syyu'
+alias mc='export DISPLAY=:0.0 && java -jar TLauncher-2.899.jar'
+
 
 # Starship initialization
 eval "$(starship init zsh)"

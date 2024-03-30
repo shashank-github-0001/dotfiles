@@ -49,7 +49,7 @@ client.focused_inactive $color2 $background $foreground $color3 $color4
 # Example configuration:
 #
 input "1739:52861:SYNA32C6:00_06CB:CE7D_Touchpad" {
-    dwt enabled
+        dwt enabled
         tap enabled
         natural_scroll enabled
         middle_emulation enabled
@@ -83,7 +83,7 @@ bindsym $mod+Return exec $term
 
 # power settings and shit
 bindsym $mod+Shift+o exec systemctl poweroff
-bindsym $mod+o exec systemctl suspend
+bindsym $mod+o exec swaylock -i $wallpaper
 
 # working with the color
 bindsym $alt+c exec colors.sh
@@ -99,7 +99,7 @@ floating_modifier $mod normal
 bindsym $mod+Shift+c reload
 # bindsym $mod+Shift+q exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 bindsym $mod+Shift+q exec swaymsg exit
- 
+
 # Moving around:
 
 
