@@ -66,9 +66,9 @@ alias cd='z'
 alias convertpng='mogrify -format jpg *.png'
 alias v='pamixer --get-volume'
 alias sv='pamixer --set-volume $1'
-alias vi='neovide'
+alias nvim='neovide'
 alias update='sudo pacman -Syyu && paru -Syyu'
-alias mc='export DISPLAY=:0.0 && java -jar TLauncher-2.899.jar'
+alias mc='export DISPLAY=:0.0 && java -jar ~/mine/TLauncher-2.899.jar'
 
 
 # Starship initialization

@@ -18,5 +18,5 @@ vim.g.maplocalleader   = " "
 vim.opt.updatetime     = 50
 vim.opt.colorcolumn    = "1000"
 vim.opt.termguicolors  = true
--- vim.o.scrolloff        = 10
--- vim.cmd("colorscheme carbonfox")
+vim.o.scrolloff        = 10
+vim.cmd("colorscheme carbonfox")
