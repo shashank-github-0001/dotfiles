@@ -14,17 +14,17 @@
         "disable-scroll": true,
         "all-outputs": true,
         "warp-on-scroll": false,
-        "format": "[{name}:{icon} ]",
-        "format-icons": {
-            "1": "",
-            "2": " ",
-            "3": "",
-            "4": "",
-            "5": "",
-            "urgent": "",
-            // "focused": "",
-            // "default": ""
-        }
+        "format": "[ {name} ]",
+        // "format-icons": {
+        //     "1": "",
+        //     "2": "",
+        //     "3": "",
+        //     "4": "",
+        //     "5": "",
+        //     "urgent": "",
+        //     "focused": "",
+        //     "default": ""
+        // }
     },
 
     "sway/mode": {
@@ -53,9 +53,9 @@
 
     "temperature": {
         "critical-threshold": 80,
-        "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": [" ", "", " "]
+        "format-critical": "{temperatureC}°C",
+        "format": "{temperatureC}°C",
+        // "format-icons": [" ", "", " "]
     },
 
     "battery": {
@@ -64,17 +64,17 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}%  ",
-        "format-plugged": "{capacity}%  ",
-        "format-alt": "{time} {icon} ",
-        "format-good": "{capacity}% {icon} ",
-        "format-full": "{capacity}% {icon} ",
-        "format-icons": [" ", " ", " ", " ", " "]
+        "format": "BAT:{capacity}%",
+        "format-charging": "BAT:{capacity}%:C",
+        // "format-plugged": "{capacity}%  ",
+        // "format-alt": "{time} {icon} ",
+        // "format-good": "{capacity}% {icon} ",
+        // "format-full": "{capacity}% {icon} ",
+        // "format-icons": [" ", " ", " ", " ", " "]
     },
 
     "network": {
-        "format-wifi": "[{essid}]:[{signalStrength}%]  ",
+        "format-wifi": "[{essid}]:[S:{signalStrength}%]",
         "format-ethernet": "{ipaddr}/{cidr}  ",
         "tooltip-format": "{ifname} via {gwaddr}  ",
         "format-linked": "{ifname} (No IP)  ",
@@ -84,20 +84,20 @@
 
     "pulseaudio": {
         "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
+        "format": "VOL:{volume}%",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": "mute  {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
+        "format-muted": "muted",
+        "format-source": "S:{volume}%",
+        // "format-source-muted": "",
+        // "format-icons": {
+        //     "headphone": "",
+        //     "hands-free": "",
+        //     "headset": "",
+        //     "phone": "",
+        //     "portable": "",
+        //     "car": "",
+        //     "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
     },

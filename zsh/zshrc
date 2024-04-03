@@ -5,17 +5,8 @@ setopt autocd beep extendedglob nomatch notify
 HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.histfile
-zstyle :compinstall filename '/home/shashank/.zshrc'
 
-autoload -Uz compinit
-zstyle ':completion"*' menu select
-zmodload zsh/complist
-compinit
  
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
-source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-
 # Path additions (using PATH instead of fish_user_paths)
 # ranking mirror
 # first go to su -
@@ -55,7 +46,7 @@ export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 alias l='lsd -Al --color always --group-dirs first'
 alias ls='lsd'
 alias d='cd $(fd -t d -H | fzf)'
-alias f='neovide $(fd -t f -H | fzf)'
+alias f='fd -t f -H | fzf'
 alias rankmirr='rankmirrors -n 6 /etc/pacman.d/mirrorlist.bak > /etc/pacman.d/mirrorlist'
 alias gall='git add . && git commit -am "$(date)" && git push -u origin main'
 alias t='a=$(fd -t d -H | fzf) && tmux new -c "$a" -s "$(basename "$a")"'
@@ -68,11 +59,11 @@ alias v='pamixer --get-volume'
 alias sv='pamixer --set-volume $1'
 alias nvim='neovide'
 alias update='sudo pacman -Syyu && paru -Syyu'
-alias mc='export DISPLAY=:0.0 && java -jar ~/mine/TLauncher-2.899.jar'
+alias mc='export DISPLAY=:0.0 && java -jar ~/TLauncher-2.899.jar'
 
 
 # Starship initialization
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
 
 # opam configuration (using source as in Zsh)
 source /home/shashank/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
