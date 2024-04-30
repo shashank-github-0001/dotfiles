@@ -24,6 +24,7 @@ alias gall 'git add .; git commit -am "(date)"; git push -u origin main'
 alias convertpng 'mogrify -format jpg *.png'
 alias update 'sudo pacman -Syyu; yay -Syyu'
 alias mc 'java -jar ~/TLauncher-2.899.jar'
+alias vate 'source env/bin/activate.fish'
 
 set -x EDITOR "nvim"
 set -x STARSHIP_CONFIG "$HOME/.config/starship/starship.toml"
