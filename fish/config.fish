@@ -18,9 +18,11 @@ end
 # you can do soffice --headless --convert-to pdf *.docx
 
 alias l 'lsd -Al --color always --group-dirs first'
+alias ls 'lsd -A --color always --group-dirs first'
 alias d 'cd (fd -t d -H | fzf)'
 alias f 'fd -t f -H | fzf'
 alias gall 'git add .; git commit -am "(date)"; git push -u origin main'
+alias gal 'git add .; git commit -am "(date)"'
 alias convertpng 'mogrify -format jpg *.png'
 alias update 'sudo pacman -Syyu; yay -Syyu'
 alias mc 'java -jar ~/TLauncher-2.899.jar'
@@ -31,6 +33,7 @@ set -x STARSHIP_CONFIG "$HOME/.config/starship/starship.toml"
 set -x XDG_CURRENT_DESKTOP "Sway"
 set -x SWAY_SCREENSHOT_DIR "~/Screenshots/"
 set -x XDG_CONFIG_HOME "$HOME/.config"
+set -x BUN_INSTALL "$HOME/.bun"
 set -x PATH "$HOME/.cargo/bin" $PATH
 set -x PATH "$HOME/.cargo/env" $PATH
 set -x PATH "$HOME/binaries" $PATH
@@ -40,6 +43,7 @@ set -x PATH "/home/shashank/.nimble/bin" $PATH
 set -x PATH "$HOME/.local/share/" $PATH
 set -x PATH "$HOME/.local/bin" $PATH
 set -x PATH "$HOME/.zfunc/" $PATH
+set -x PATH "$HOME/RustRover-241.15989.101/bin/" $PATH
 
 set -x HISTSIZE 1000
 set -x SAVEHIST 1000

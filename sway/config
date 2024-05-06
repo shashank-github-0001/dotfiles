@@ -24,7 +24,8 @@ font pango:FiraCode Nerd Font Mono 11
 # default settings
 default_border pixel 2
 smart_borders on
-# colors
+
+# colors for whatever i want and nothing else
 # class                 border  backgr. text    indicator child_border
 client.focused          $color1 $background $foreground $color2 $color3
 client.focused_inactive $color2 $background $foreground $color3 $color4
@@ -98,13 +99,8 @@ bindsym $mod+d exec $menu
 
 floating_modifier $mod normal
 bindsym $mod+Shift+c reload
-# bindsym $mod+Shift+q exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 bindsym $mod+Shift+q exec swaymsg exit
 
-# Moving around:
-
-
-#
 
 # Move your focus around
 bindsym $mod+$left focus left
@@ -181,19 +177,15 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
+# Move something to scratchpad
 bindsym $mod+Shift+minus move scratchpad
 
-# Show the next scratchpad window or hide the focused scratchpad window.
-# If there are multiple scratchpad windows, this command cycles through them.
+# to show or hide the scratchpad
 bindsym $mod+minus scratchpad show
 #
 # Resizing containers:
 #
 mode "resize" {
-# left will shrink the containers width
-# right will grow the containers width
-# up will shrink the containers height
-# down will grow the containers height
     bindsym $left resize shrink width 10px
         bindsym $down resize grow height 10px
         bindsym $up resize shrink height 10px
