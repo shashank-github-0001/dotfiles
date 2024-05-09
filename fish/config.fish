@@ -44,6 +44,7 @@ set -x PATH "$HOME/.local/share/" $PATH
 set -x PATH "$HOME/.local/bin" $PATH
 set -x PATH "$HOME/.zfunc/" $PATH
 set -x PATH "$HOME/RustRover-241.15989.101/bin/" $PATH
+set -x PATH "$HOME/todo-rs/target/release/" $PATH
 
 set -x HISTSIZE 1000
 set -x SAVEHIST 1000
