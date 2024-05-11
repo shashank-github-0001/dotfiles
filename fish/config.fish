@@ -27,6 +27,7 @@ alias convertpng 'mogrify -format jpg *.png'
 alias update 'sudo pacman -Syyu; yay -Syyu'
 alias mc 'java -jar ~/TLauncher-2.899.jar'
 alias vate 'source env/bin/activate.fish'
+alias t 'todo-rs'
 
 set -x EDITOR "nvim"
 set -x STARSHIP_CONFIG "$HOME/.config/starship/starship.toml"
@@ -43,8 +44,8 @@ set -x PATH "/home/shashank/.nimble/bin" $PATH
 set -x PATH "$HOME/.local/share/" $PATH
 set -x PATH "$HOME/.local/bin" $PATH
 set -x PATH "$HOME/.zfunc/" $PATH
-set -x PATH "$HOME/RustRover-241.15989.101/bin/" $PATH
 set -x PATH "$HOME/todo-rs/target/release/" $PATH
+set -x PATH "$HOME/pass-rs/target/release/" $PATH
 
 set -x HISTSIZE 1000
 set -x SAVEHIST 1000

@@ -19,7 +19,7 @@ set $term kitty
 set $menu rofi -show run
 
 # setting font
-font pango:FiraCode Nerd Font Mono 11
+font pango:MartianMono Nerd Font 11
 
 # default settings
 default_border pixel 2

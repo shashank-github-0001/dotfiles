@@ -1,6 +1,6 @@
 configuration {
     modes: "window,drun,run,ssh";
-    font: "FiraCode Nerd Font Mono 12";
+    font: "MartianMono Nerd Font 12";
     fixed-num-lines: false;
     show-icons: true;
     drun-display-format: "{name} [<span weight='bold' size='small'><i>({generic})</i></span>]";

@@ -3,7 +3,8 @@
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: "FiraCode Nerd Font Mono";
+    /* font-family: "FiraCode Nerd Font Mono"; */
+    font-family: "MartianMono Nerd Font";
     font-size: 15px;
 }
 
