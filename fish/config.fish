@@ -29,6 +29,11 @@ alias mc 'java -jar ~/TLauncher-2.899.jar'
 alias vate 'source env/bin/activate.fish'
 alias t 'todo-rs'
 
+# for the pass-rs program i wrote
+alias pa 'pass-rs --add $1'
+alias pl 'pass-rs --list'
+alias pr 'pass-rs --remove $1'
+
 set -x EDITOR "nvim"
 set -x STARSHIP_CONFIG "$HOME/.config/starship/starship.toml"
 set -x XDG_CURRENT_DESKTOP "Sway"
