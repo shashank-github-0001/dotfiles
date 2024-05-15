@@ -26,6 +26,12 @@ alias mc 'java -jar ~/TLauncher-2.899.jar'
 alias vate 'source env/bin/activate.fish'
 alias t 'todo-rs'
 
+# git alias
+alias gs 'git status'
+alias ga 'git add .'
+alias gc 'git commit -m $1'
+alias gp 'git push -u origin main'
+
 # for the pass-rs program i wrote
 alias pa 'pass-rs --add $1'
 alias pl 'pass-rs --list'
