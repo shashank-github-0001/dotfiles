@@ -54,6 +54,7 @@ set -x PATH "$HOME/.local/bin" $PATH
 set -x PATH "$HOME/.zfunc/" $PATH
 set -x PATH "$HOME/todo-rs/target/release/" $PATH
 set -x PATH "$HOME/pass-rs/target/release/" $PATH
+set -x PATH "$HOME/OtherBin/" $PATH
 
 set -x HISTSIZE 1000
 set -x SAVEHIST 1000
