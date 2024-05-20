@@ -22,4 +22,4 @@ settings:
     global: 12pt
   url.searchengines:
     global:
-      DEFAULT: https://google.com/?q={}
+      DEFAULT: https://duckduckgo.com/?q={}

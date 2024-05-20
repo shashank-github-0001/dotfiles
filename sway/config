@@ -78,6 +78,7 @@ bindsym XF86MonBrightnessUp exec brightnessctl s +10%
 # my personal bindings
 bindsym $alt+t exec reload.sh
 bindsym $alt+f exec kitty -e yazi
+bindsym $alt+b exec qutebrowser
 
 # screenshots
 bindsym $mod+Shift+p exec save_screenshot.sh
@@ -175,7 +176,6 @@ bindsym $mod+e layout toggle split
 bindsym $mod+f fullscreen
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
-bindsym $mod+a focus parent
 
 # Move something to scratchpad
 bindsym $mod+Shift+minus move scratchpad
