@@ -22,8 +22,8 @@ alias ls 'lsd -A --color always --group-dirs first'
 alias d 'cd (fd -t d -H | fzf)'
 alias f 'fd -t f -H | fzf'
 alias convertpng 'mogrify -format jpg *.png'
-alias mc 'java -jar ~/TLauncher-2.899.jar'
-alias vate 'source env/bin/activate.fish'
+alias mc 'java -jar ~/SKlauncher-3.2.8.jar'
+alias vate 'source .venv/bin/activate.fish'
 alias t 'todo-rs'
 
 # git alias
