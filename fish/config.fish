@@ -63,13 +63,13 @@ set -x PATH "$HOME/.local/bin" $PATH
 set -x PATH "$HOME/.zfunc/" $PATH
 
 # personal projects
-set -x PATH "$HOME/todo-rs/target/release/" $PATH
-set -x PATH "$HOME/pass-rs/target/release/" $PATH
+set -x PATH "$HOME/PersonalProjects/todo-rs/target/release/" $PATH
+set -x PATH "$HOME/PersonalProjects/pass-rs/target/release/" $PATH
 
 
 # other bins
-set -x PATH "$HOME/HomeBin/RustRover-2024.1/bin/" $PATH
-set -x PATH "$HOME/HomeBin/WebStorm-241.15989.105/bin" $PATH
+set -x PATH "$HOME/localbin/RustRover-2024.1/bin/" $PATH
+set -x PATH "$HOME/localbin/WebStorm-241.15989.105/bin" $PATH
 
 
 set -x HISTSIZE 1000
