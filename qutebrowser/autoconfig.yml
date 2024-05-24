@@ -9,6 +9,7 @@ settings:
   bindings.commands:
     global:
       normal:
+        c: open chat.openai.com
         w: open -t web.whatsapp.com
   colors.webpage.darkmode.enabled:
     global: true
@@ -17,9 +18,9 @@ settings:
   content.javascript.clipboard:
     global: access
   fonts.default_family:
-    global: JetBrainsMono Nerd Font
+    global: FiraCode Nerd Font
   fonts.default_size:
-    global: 12pt
+    global: 9pt
   url.searchengines:
     global:
       DEFAULT: https://duckduckgo.com/?q={}

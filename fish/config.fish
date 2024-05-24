@@ -32,10 +32,19 @@ alias ga 'git add .'
 alias gc 'git commit -m $1'
 alias gp 'git push -u origin main'
 
+#cargo alias
+alias cr 'cargo run'
+alias ca 'cargo add'
+
 # for the pass-rs program i wrote
 alias pa 'pass-rs --add $1'
 alias pl 'pass-rs --list'
 alias pr 'pass-rs --remove $1'
+
+# for the todo-rs program i wrote
+alias ta 'todo-rs --add $1'
+alias tl 'todo-rs --list'
+alias tr 'todo-rs --remove $1'
 
 set -x EDITOR "nvim"
 set -x STARSHIP_CONFIG "$HOME/.config/starship/starship.toml"
@@ -52,9 +61,16 @@ set -x PATH "/home/shashank/.nimble/bin" $PATH
 set -x PATH "$HOME/.local/share/" $PATH
 set -x PATH "$HOME/.local/bin" $PATH
 set -x PATH "$HOME/.zfunc/" $PATH
+
+# personal projects
 set -x PATH "$HOME/todo-rs/target/release/" $PATH
 set -x PATH "$HOME/pass-rs/target/release/" $PATH
-set -x PATH "$HOME/OtherBin/" $PATH
+
+
+# other bins
+set -x PATH "$HOME/HomeBin/RustRover-2024.1/bin/" $PATH
+set -x PATH "$HOME/HomeBin/WebStorm-241.15989.105/bin" $PATH
+
 
 set -x HISTSIZE 1000
 set -x SAVEHIST 1000
