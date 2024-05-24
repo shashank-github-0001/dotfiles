@@ -30,6 +30,7 @@ alias t 'todo-rs'
 alias gs 'git status'
 alias ga 'git add .'
 alias gc 'git commit -m $1'
+alias gcd 'git commit -m $(date)'
 alias gp 'git push -u origin main'
 
 #cargo alias
