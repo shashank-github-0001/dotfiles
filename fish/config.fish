@@ -17,6 +17,33 @@ end
 # its from libreoffice 
 # you can do soffice --headless --convert-to pdf *.docx
 
+set -x EDITOR "nvim"
+set -x STARSHIP_CONFIG "$HOME/.config/starship/starship.toml"
+set -x XDG_CURRENT_DESKTOP "Sway"
+set -x SWAY_SCREENSHOT_DIR "~/Screenshots/"
+set -x XDG_CONFIG_HOME "$HOME/.config"
+set -x BUN_INSTALL "$HOME/.bun"
+set -x PATH "$HOME/.cargo/bin" $PATH
+set -x PATH "$HOME/.cargo/env" $PATH
+set -x PATH "$HOME/binaries" $PATH
+set -x PATH "$HOME/.config/scripts" $PATH
+set -x PATH "$BUN_INSTALL/bin" $PATH
+set -x PATH "/home/shashank/.nimble/bin" $PATH
+set -x PATH "$HOME/.local/share/" $PATH
+set -x PATH "$HOME/.local/bin" $PATH
+set -x PATH "$HOME/.zfunc/" $PATH
+
+# personal projects
+set -x PATH "$HOME/PersonalProjects/todo-rs/target/release/" $PATH
+set -x PATH "$HOME/PersonalProjects/pass-rs/target/release/" $PATH
+
+
+# other bins
+set -x PATH "$HOME/localbin/RustRover-2024.1/bin/" $PATH
+set -x PATH "$HOME/localbin/WebStorm-241.15989.105/bin" $PATH
+
+
+
 alias l 'lsd -Al --color always --group-dirs first'
 alias ls 'lsd -A --color always --group-dirs first'
 alias d 'cd (fd -t d -H | fzf)'
@@ -46,31 +73,6 @@ alias pr 'pass-rs --remove $1'
 alias ta 'todo-rs --add $1'
 alias tl 'todo-rs --list'
 alias tr 'todo-rs --remove $1'
-
-set -x EDITOR "nvim"
-set -x STARSHIP_CONFIG "$HOME/.config/starship/starship.toml"
-set -x XDG_CURRENT_DESKTOP "Sway"
-set -x SWAY_SCREENSHOT_DIR "~/Screenshots/"
-set -x XDG_CONFIG_HOME "$HOME/.config"
-set -x BUN_INSTALL "$HOME/.bun"
-set -x PATH "$HOME/.cargo/bin" $PATH
-set -x PATH "$HOME/.cargo/env" $PATH
-set -x PATH "$HOME/binaries" $PATH
-set -x PATH "$HOME/.config/scripts" $PATH
-set -x PATH "$BUN_INSTALL/bin" $PATH
-set -x PATH "/home/shashank/.nimble/bin" $PATH
-set -x PATH "$HOME/.local/share/" $PATH
-set -x PATH "$HOME/.local/bin" $PATH
-set -x PATH "$HOME/.zfunc/" $PATH
-
-# personal projects
-set -x PATH "$HOME/PersonalProjects/todo-rs/target/release/" $PATH
-set -x PATH "$HOME/PersonalProjects/pass-rs/target/release/" $PATH
-
-
-# other bins
-set -x PATH "$HOME/localbin/RustRover-2024.1/bin/" $PATH
-set -x PATH "$HOME/localbin/WebStorm-241.15989.105/bin" $PATH
 
 
 set -x HISTSIZE 1000

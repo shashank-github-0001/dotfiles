@@ -11,12 +11,15 @@ settings:
       normal:
         c: open chat.openai.com
         w: open -t web.whatsapp.com
+        y: open -t youtube.com
   colors.webpage.darkmode.enabled:
     global: true
   content.default_encoding:
     global: utf-8
   content.javascript.clipboard:
     global: access
+  editor.encoding:
+    global: utf-32
   fonts.default_family:
     global: FiraCode Nerd Font
   fonts.default_size:
