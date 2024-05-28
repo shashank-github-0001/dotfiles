@@ -42,6 +42,9 @@ set -x PATH "$HOME/PersonalProjects/pass-rs/target/release/" $PATH
 set -x PATH "$HOME/localbin/RustRover-2024.1/bin/" $PATH
 set -x PATH "$HOME/localbin/WebStorm-241.15989.105/bin" $PATH
 
+# suburl crawler
+set -x PATH "$HOME/PersonalProjects/suburl_crawler_py/" $PATH
+
 
 
 alias l 'lsd -Al --color always --group-dirs first'
@@ -74,6 +77,10 @@ alias ta 'todo-rs --add $1'
 alias tl 'todo-rs --list'
 alias tr 'todo-rs --remove $1'
 
+#
+alias rurls "source $HOME/PersonalProjects/suburl_crawler_py/.venv/bin/activate.fish && $HOME/PersonalProjects/suburl_crawler_py/sub_url_crawler.py"
+
+
 
 set -x HISTSIZE 1000
 set -x SAVEHIST 1000
@@ -82,3 +89,5 @@ set -x HISTFILE "$HOME/.histfile"
 # Evaluate zoxide initialization
 zoxide init fish | source
 source "$HOME/.cargo/env.fish"
+
+set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; set -gx PATH $HOME/.cabal/bin /home/shashank/.ghcup/bin $PATH # ghcup-env

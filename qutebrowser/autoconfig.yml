@@ -9,9 +9,8 @@ settings:
   bindings.commands:
     global:
       normal:
-        c: open chat.openai.com
+        c: open -t chatgpt.com
         w: open -t web.whatsapp.com
-        y: open -t youtube.com
   colors.webpage.darkmode.enabled:
     global: true
   content.default_encoding:
