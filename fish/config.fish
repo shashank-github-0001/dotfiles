@@ -54,7 +54,7 @@ alias f 'fd -t f -H | fzf'
 alias convertpng 'mogrify -format jpg *.png'
 alias mc 'java -jar ~/SKlauncher-3.2.8.jar'
 alias vate 'source .venv/bin/activate.fish'
-alias t 'todo-rs'
+alias update 'sudo pacman -Syyu && paru -Syyu'
 
 # git alias
 alias gs 'git status'
