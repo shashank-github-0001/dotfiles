@@ -10,7 +10,6 @@ settings:
     global:
       normal:
         c: open -t chatgpt.com
-        w: open -t web.whatsapp.com
   colors.webpage.darkmode.enabled:
     global: true
   content.default_encoding:

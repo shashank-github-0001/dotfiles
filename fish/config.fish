@@ -54,7 +54,7 @@ alias f 'fd -t f -H | fzf'
 alias convertpng 'mogrify -format jpg *.png'
 alias mc 'java -jar ~/SKlauncher-3.2.8.jar'
 alias vate 'source .venv/bin/activate.fish'
-alias update 'sudo pacman -Syyu && paru -Syyu'
+alias update 'sudo pacman -Syu && paru -Syu'
 
 # git alias
 alias gs 'git status'
@@ -77,7 +77,7 @@ alias ta 'todo-rs --add $1'
 alias tl 'todo-rs --list'
 alias tr 'todo-rs --remove $1'
 
-#
+# some personal project related alias
 alias rurls "source $HOME/PersonalProjects/suburl_crawler_py/.venv/bin/activate.fish && $HOME/PersonalProjects/suburl_crawler_py/sub_url_crawler.py"
 
 
