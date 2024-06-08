@@ -89,5 +89,3 @@ set -x HISTFILE "$HOME/.histfile"
 # Evaluate zoxide initialization
 zoxide init fish | source
 source "$HOME/.cargo/env.fish"
-
-set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; set -gx PATH $HOME/.cabal/bin /home/shashank/.ghcup/bin $PATH # ghcup-env
