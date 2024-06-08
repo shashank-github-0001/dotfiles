@@ -32,6 +32,8 @@ set -x PATH "/home/shashank/.nimble/bin" $PATH
 set -x PATH "$HOME/.local/share/" $PATH
 set -x PATH "$HOME/.local/bin" $PATH
 set -x PATH "$HOME/.zfunc/" $PATH
+set -x JAVA_HOME "/usr/lib/jvm/default"
+set -x PATH "$JAVA_HOME/bin:$PATH"
 
 # personal projects
 set -x PATH "$HOME/PersonalProjects/todo-rs/target/release/" $PATH
