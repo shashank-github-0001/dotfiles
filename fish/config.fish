@@ -34,6 +34,7 @@ set -x PATH "$HOME/.local/bin" $PATH
 set -x PATH "$HOME/.zfunc/" $PATH
 set -x JAVA_HOME "/usr/lib/jvm/default"
 set -x PATH "$JAVA_HOME/bin:$PATH"
+set -g NVM_DIR ~/.config/nvm
 
 # personal projects
 set -x PATH "$HOME/PersonalProjects/todo-rs/target/release/" $PATH
@@ -42,7 +43,6 @@ set -x PATH "$HOME/PersonalProjects/pass-rs/target/release/" $PATH
 
 # other bins
 set -x PATH "$HOME/localbin/RustRover-2024.1/bin/" $PATH
-set -x PATH "$HOME/localbin/WebStorm-241.15989.105/bin" $PATH
 
 # suburl crawler
 set -x PATH "$HOME/PersonalProjects/suburl_crawler_py/" $PATH
@@ -57,6 +57,9 @@ alias convertpng 'mogrify -format jpg *.png'
 alias mc 'java -jar ~/SKlauncher-3.2.8.jar'
 alias vate 'source .venv/bin/activate.fish'
 alias update 'sudo pacman -Syu && paru -Syu'
+
+#postgres login
+alias student 'psql -U postgres -d student -h localhost -W'
 
 # git alias
 alias gs 'git status'
