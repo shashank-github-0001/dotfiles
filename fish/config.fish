@@ -19,16 +19,12 @@ end
 
 set -x EDITOR "nvim"
 set -x STARSHIP_CONFIG "$HOME/.config/starship/starship.toml"
-set -x XDG_CURRENT_DESKTOP "Sway"
-set -x SWAY_SCREENSHOT_DIR "~/Screenshots/"
 set -x XDG_CONFIG_HOME "$HOME/.config"
 set -x BUN_INSTALL "$HOME/.bun"
 set -x PATH "$HOME/.cargo/bin" $PATH
 set -x PATH "$HOME/.cargo/env" $PATH
-set -x PATH "$HOME/binaries" $PATH
 set -x PATH "$HOME/.config/scripts" $PATH
 set -x PATH "$BUN_INSTALL/bin" $PATH
-set -x PATH "/home/shashank/.nimble/bin" $PATH
 set -x PATH "$HOME/.local/share/" $PATH
 set -x PATH "$HOME/.local/bin" $PATH
 set -x PATH "$HOME/.zfunc/" $PATH
@@ -56,7 +52,7 @@ alias f 'fd -t f -H | fzf'
 alias convertpng 'mogrify -format jpg *.png'
 alias mc 'java -jar ~/SKlauncher-3.2.8.jar'
 alias vate 'source .venv/bin/activate.fish'
-alias update 'sudo pacman -Syu && paru -Syu'
+alias update 'sudo pacman -Syu; paru -Syu'
 
 #postgres login
 alias student 'psql -U postgres -d student -h localhost -W'
@@ -93,4 +89,5 @@ set -x HISTFILE "$HOME/.histfile"
 
 # Evaluate zoxide initialization
 zoxide init fish | source
+starship init fish | source
 source "$HOME/.cargo/env.fish"
