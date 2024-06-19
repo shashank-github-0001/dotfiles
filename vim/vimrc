@@ -1,6 +1,8 @@
 " Allow hidden buffers
 set hidden
 set cursorline 
+set clipboard=unnamedplus
+set clipboard=unnamed
 
 " mouse
 set mouse=a
@@ -19,20 +21,11 @@ set showmode
 set showcmd
 
 " Searching
-nnoremap / /\v
-vnoremap / /\v
 set nohlsearch
 set incsearch
 set ignorecase
 set smartcase
 set showmatch
-map <leader><space> :let @/=''<cr> " clear search
-
-" Visualize tabs and newlines
-set listchars=tab:▸\ ,eol:¬
-" Uncomment this to enable by default: set list " To enable by default Or use
-" your leader key + l to toggle on/off
-map <leader>l :set list!<CR> " Toggle tabs and EOL
 
 " Cursor motion
 set scrolloff=3
@@ -64,7 +57,6 @@ set nowritebackup
 set updatetime=300
 set signcolumn=yes
 
-colorscheme habamax 
 
 call plug#begin()
 
@@ -72,8 +64,12 @@ Plug 'tpope/vim-sensible'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'rose-pine/vim'
 
 call plug#end()
+
+colorscheme rosepine
+set background=dark
 
 let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-pairs', 'coc-eslint', 'coc-tsserver', 'coc-css', 'coc-prettier', 'coc-html', 'coc-vimlsp', 'coc-tailwindcss', 'coc-highlight', 'coc-sh', '@yaegassy/coc-tailwindcss3']
 
