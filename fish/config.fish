@@ -57,6 +57,7 @@ alias update 'sudo pacman -Syu; paru -Syu'
 
 #postgres login
 alias student 'psql -U postgres -d student -h localhost -W'
+alias todo 'psql -U postgres -d todo -h localhost -W'
 
 # git alias
 alias gs 'git status'
