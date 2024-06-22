@@ -18,7 +18,6 @@ end
 # you can do soffice --headless --convert-to pdf *.docx
 
 set -x EDITOR "nvim"
-set -x STARSHIP_CONFIG "$HOME/.config/starship/starship.toml"
 set -x XDG_CONFIG_HOME "$HOME/.config"
 set -x BUN_INSTALL "$HOME/.bun"
 set -x PATH "$HOME/.cargo/bin" $PATH
@@ -91,5 +90,4 @@ set -x HISTFILE "$HOME/.histfile"
 
 # Evaluate zoxide initialization
 zoxide init fish | source
-starship init fish | source
 source "$HOME/.cargo/env.fish"
