@@ -30,7 +30,7 @@ set -x PATH "$HOME/.zfunc/" $PATH
 set -x JAVA_HOME "/usr/lib/jvm/default"
 set -x PATH "$JAVA_HOME/bin:$PATH"
 set -g NVM_DIR ~/.config/nvm
-set -gx BROWSER google-chrome-stable
+set -x WEZTERM_GUI_BACKEND wayland
 
 # personal projects
 set -x PATH "$HOME/PersonalProjects/todo-rs/target/release/" $PATH
